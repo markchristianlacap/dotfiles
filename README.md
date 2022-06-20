@@ -13,11 +13,12 @@
 - sxhkd
 - polybar
 - fish
-- nvim
+- neovim
+- flameshot
 
 ```binary: fish
 #!/usr/bin/env fish
-sudo pacman -Syu rofi bspwm sxhkd polybar fish nvim
+sudo pacman -Syu rofi bspwm sxhkd polybar fish neovim flameshot
 
 ```
 
