@@ -25,3 +25,5 @@ sudo pacman -Syu rofi bspwm sxhkd polybar fish nvim
 
 - SF Pro
 - SF Mono
+- Fira Code
+- Fira Code Nerd Font
