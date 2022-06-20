@@ -8,5 +8,5 @@ polybar-msg cmd quit
 # killall -q polybar
 
 # Launch polybar
-polybar main & disown
+polybar top & disown
 polybar bottom & disown
