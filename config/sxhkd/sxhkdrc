@@ -12,7 +12,7 @@ super + @space
 Print
 	flameshot gui
 super + e
-	pcmanfm
+	thunar
 super + v 
 	code
 super + p

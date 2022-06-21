@@ -13,5 +13,6 @@ bspc config gapless_monocle      true
 
 
 # startup
+wmname LG3D &
 feh --bg-max --randomize ~/Pictures/wallpaper/* &
 sh ~/.config/polybar/launch.sh
