@@ -133,3 +133,12 @@ XF86Audio{RaiseVolume,LowerVolume}
 	pactl set-sink-volume 0 {+5%,-5%}
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+
+# backlight
+# brightness down
+XF86MonBrightnessDown
+	xbacklight -dec 10%
+
+# brightness up
+XF86MonBrightnessUp
+	xbacklight -inc 10%
