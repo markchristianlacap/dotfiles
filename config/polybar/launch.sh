@@ -9,4 +9,3 @@ polybar-msg cmd quit
 
 # Launch polybar
 polybar top & disown
-polybar bottom & disown
