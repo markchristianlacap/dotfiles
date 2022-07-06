@@ -1,6 +1,6 @@
 #! /bin/sh
 pgrep -x sxhkd > /dev/null || sxhkd &
-
+picom --experimental-backends &
 bspc monitor -d 1 2 3 4 5
 # startup
 feh --bg-max --randomize ~/Pictures/wallpaper/* &
