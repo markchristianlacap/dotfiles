@@ -1,7 +1,14 @@
 #! /bin/sh
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom --experimental-backends &
-bspc monitor -d 1 2 3 4 5
+
+bspc monitor HDMI-1-0 -d 6 7 8 9 0 &
+bspc monitor eDP1 -d 1 2 3 4 5 &
 # startup
-feh --bg-max --randomize ~/Pictures/wallpaper/* &
-sh ~/.config/polybar/launch.sh
+my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-1-0')
+if [[ $my_laptop_external_monitor = *connected* ]]; then
+   xrandr --output eDP1 --output HDMI-1-0 --primary --mode 1920x1080 -r 75 --left-of eDP1 &
+fi
+
+feh --no-xinerama --bg-fill --randomize ~/Pictures/wallpaper/* &
+sh ~/.config/polybar/launch.sh &
