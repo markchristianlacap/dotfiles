@@ -5,4 +5,5 @@ cp ~/.config/rofi ./config/ -r
 cp ~/.config/bspwm ./config/ -r
 cp ~/.config/kitty ./config/ -r
 cp ~/.config/picom.conf ./config/picom.conf -r
+cp ~/Pictures/wallpaper.jpg ./Pictures/wallpaper.jpg -r
 echo "successfully synched"
