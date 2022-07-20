@@ -3,7 +3,7 @@
 - My minimal `.config` files
 
 ## Preview
-![Preview Image](./screenshot.png, "Screen shot")
+![Preview Image](screenshot.png, "Screen shot")
 ## Linux Distro
 
 - Arch Linux
