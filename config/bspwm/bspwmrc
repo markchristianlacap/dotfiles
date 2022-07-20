@@ -2,5 +2,5 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom --experimental-backends &
 bspc monitor -d 1 2 3 4 5 &
-feh --no-xinerama --bg-fill --randomize ~/Pictures/wallpaper/* &
+feh --no-xinerama --bg-fill ~/Pictures/wallpaper.jpg &
 sh ~/.config/polybar/launch.sh &
