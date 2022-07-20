@@ -9,7 +9,3 @@ polybar-msg cmd quit
 
 # Launch polybar
 polybar top &
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-1-0')
-if [[ $my_laptop_external_monitor = *connected* ]]; then
-    polybar external &
-fi

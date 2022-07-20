@@ -24,7 +24,4 @@ sudo pacman -Syu rofi bspwm sxhkd polybar fish neovim flameshot
 
 ## Fonts
 
-- SF Pro
-- SF Mono
-- Fira Code
-- Fira Code Nerd Font
+- Iosevka Nerd Font
