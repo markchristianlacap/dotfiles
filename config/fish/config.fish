@@ -9,3 +9,5 @@ nvm use lts -s
 alias sc="sudo systemctl"
 alias pa="php artisan"
 alias p="pnpm"
+alias g="git"
+alias gc="git clone"
