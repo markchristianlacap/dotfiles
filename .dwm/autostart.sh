@@ -1,4 +1,4 @@
 #!/bin/bash 
-xrandr --output HDMI-0 --mode 1920x1080 --rate 75 &
-feh --bg-scale ~/Pictures/dracula.png &
+xrandr --output DP-0 --rate 75 --mode 2560x1080  &
+~/.fehbg &
 picom -b &
