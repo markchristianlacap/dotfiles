@@ -3,7 +3,7 @@ function git_branch() {
     if [[ $branch == "" ]]; then
         :
     else
-        echo " *$branch"
+        echo " $branch"
     fi
 }
 
