@@ -3,14 +3,14 @@ function git_branch() {
     if [[ $branch == "" ]]; then
         :
     else
-        echo '('$branch')'
+        echo " *$branch"
     fi
 }
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 setopt prompt_subst		# Automatically cd into typed directory.
-PROMPT='%{$fg[magenta]%}%~ %F{39}$(git_branch)%{$reset_color%}$ '
+PROMPT='%{$fg[magenta]%}%~%F{243}$(git_branch)%{$reset_color%} $ '
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
 
