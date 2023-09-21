@@ -17,7 +17,7 @@
 - dmenu
 - picom
 - pipewire
-- fish
+- zsh 
 
 ## Preview
 
