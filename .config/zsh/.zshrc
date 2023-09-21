@@ -1,8 +1,18 @@
+function git_branch() {
+    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    if [[ $branch == "" ]]; then
+        :
+    else
+        echo '('$branch')'
+    fi
+}
+
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-setopt autocd		# Automatically cd into typed directory.
+setopt prompt_subst		# Automatically cd into typed directory.
+PROMPT='%{$fg[magenta]%}%~ %F{39}$(git_branch)%{$reset_color%}$ '
 stty stop undef		# Disable ctrl-s to freeze terminal.
+
 
 # History in cache directory:
 HISTSIZE=10000000
@@ -68,6 +78,7 @@ bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
 
+source $HOME/.config/zsh/aliases.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
