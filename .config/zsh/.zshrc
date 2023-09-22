@@ -1,25 +1,13 @@
-function git_branch() {
-    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-    if [[ $branch == "" ]]; then
-        :
-    else
-        echo " $branch"
-    fi
-}
 
-# Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 setopt prompt_subst		# Automatically cd into typed directory.
-PROMPT='%{$fg[magenta]%}%~%F{243}$(git_branch)%{$reset_color%} $ '
-stty stop undef		# Disable ctrl-s to freeze terminal.
-
+PS1='%{$fg[magenta]%}%~ %{$reset_color%}$ '
 
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+HISTFILE="$HOME/.local/share/zsh/history"
 
-# Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist

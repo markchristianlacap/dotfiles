@@ -8,4 +8,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ZDOTDIR="$HOME/.config/zsh"
 
 slstatus &
+numlockx &
 exec dwm 
