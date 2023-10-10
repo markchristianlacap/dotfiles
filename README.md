@@ -17,7 +17,8 @@
 - dmenu
 - picom
 - pipewire
-- zsh 
+- fish 
+- tmux
 
 ## Preview
 
