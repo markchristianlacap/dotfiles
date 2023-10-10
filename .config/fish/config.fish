@@ -3,27 +3,43 @@ starship init fish | source
 
 # vi mode
 fish_vi_key_bindings
- 
+
 # variables
 set fish_greeting
-set PATH  /home/mark/.dotnet/tools $PATH
-set SSH_AUTH_SOCK
-set _JAVA_AWT_WM_NONREPARENTING 1
-set AWT_TOOLKIT MToolkit
+set PATH /home/mark/.dotnet/tools $PATH
 
-# abbr
+# abbreviations
+
+# system
 abbr --add sc sudo systemctl
-abbr --add p pnpm
-abbr --add g git
-abbr --add gc git clone
-abbr --add gs git status
-abbr --add ga git add
+
+# git
+abbr --add gcm git commit -m
 abbr --add gp git push
 abbr --add gpl git pull
-abbr --add gcm git commit -m
+abbr --add ga git add
+abbr --add gs git status
+abbr --add gd git diff
 abbr --add gco git checkout
-abbr --add vim nvim
-abbr --add dc docker compose
+abbr --add gl git log
+abbr --add gaa git add --all
+abbr --add g git
+
+# docker
+abbr --add d docker
+abbr --add dc docker-compose
+abbr --add dcb docker-compose build
+abbr --add dcd docker-compose down
+abbr --add dcr docker-compose run
+abbr --add dce docker-compose exec
+abbr --add dcl docker-compose logs
+abbr --add dcu docker-compose up
+
+#pnpm 
+abbr --add p pnpm
+abbr --add pi pnpm i
+abbr --add pu pnpm up
+abbr --add pr pnpm run
 
 # aliases
 alias ls 'ls -h --color=auto'
@@ -31,7 +47,5 @@ alias ll 'ls -lh --color=auto'
 alias la 'ls -a --color=auto'
 alias lla 'ls -alh --color=auto'
 alias l 'ls -CF --color=auto'
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+alias vim nvim
+alias vi nvim
