@@ -1,6 +1,6 @@
-# Suckless Setup
+# Linux Dotfiles 
 
-- This is my suckless setup. I use this setup for my daily driver.
+- This is my suckless setup. 
 
 ## Operating System
 
