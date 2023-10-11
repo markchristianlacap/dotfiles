@@ -1,2 +1,1 @@
-require("mark.core")
-require("mark.lazy")
+require('mclacap.core')

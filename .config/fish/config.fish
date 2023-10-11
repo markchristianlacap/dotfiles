@@ -1,6 +1,6 @@
 # Get terminal emulator
 set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
-
+set TERM (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
 # Exports
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
