@@ -1,0 +1,4 @@
+backend = "glx";
+vsync = true;
+corner-radius = 5;
+animations = true;

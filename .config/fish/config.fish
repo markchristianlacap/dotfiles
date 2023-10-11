@@ -1,3 +1,18 @@
+# Get terminal emulator
+set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
+
+# Exports
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+
+# Term
+switch "$TERM_EMULATOR"
+case '*kitty*'
+	export TERM='xterm-kitty'
+case '*'
+	export TERM='xterm-256color'
+end
+
 # prompt
 starship init fish | source
 
