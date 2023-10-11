@@ -27,21 +27,19 @@ return {
           "json",
           "javascript",
           "typescript",
-          "tsx",
           "yaml",
           "html",
           "css",
-          "prisma",
           "markdown",
           "markdown_inline",
-          "svelte",
-          "graphql",
           "bash",
           "lua",
           "vim",
           "dockerfile",
           "gitignore",
-          "query",
+          "vue",
+          "c_sharp",
+          "fish"
         },
         incremental_selection = {
           enable = true,
@@ -52,12 +50,17 @@ return {
             node_decremental = "<bs>",
           },
         },
-        -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
       })
+      local wk = require("which-key")
+    wk.register({
+        g= {
+            name = "LazyGit",
+            g = { "<cmd>LazyGit<CR>", "Open LazyGit" },
+            b = { "<cmd>LazyGitBlame<CR>", "Open LazyGitBlame" },
+            c = { "<cmd>LazyGitConfig<CR>", "Open LazyGitConfig" },
+            s = { "<cmd>LazyGitStash<CR>", "Open LazyGitStash" },
+        }
+    }, { prefix = "<leader>" })
     end,
   },
 }
