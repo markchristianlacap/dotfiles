@@ -8,7 +8,7 @@ return {
     'folke/neodev.nvim',
   },
   config = function()
-    local on_attach = function(_, bufnr)
+    local on_attach = function(client, bufnr)
       local nmap = function(keys, func, desc)
         if desc then
           desc = 'LSP: ' .. desc
@@ -37,7 +37,17 @@ return {
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
       end, { desc = 'Format current buffer with LSP' })
+
+      -- Set autocommands conditional on server_capabilities
+      if client.name == 'eslint' then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll",
+        })
+      end
     end
+
+
     require('mason').setup()
     require('mason-lspconfig').setup()
     local servers = {
@@ -53,7 +63,8 @@ return {
       eslint = {},
       unocss = {
         filetypes = { 'vue' }
-      }
+      },
+      yamlls = {},
     }
 
     -- Setup neovim lua configuration
@@ -80,23 +91,17 @@ return {
         }
       end
     }
-    -- Whenever an LSP attaches to a buffer, we will run this function.
-    --
-    -- See `:help LspAttach` for more information about this autocmd event.
+
     vim.api.nvim_create_autocmd('LspAttach', {
-      -- This is where we attach the autoformatting for reasonable clients
       callback = function(args)
         local client_id = args.data.client_id
         local client = vim.lsp.get_client_by_id(client_id)
         local bufnr = args.buf
-
         -- Only attach to clients that support document formatting
         if not client.server_capabilities.documentFormattingProvider then
           return
         end
 
-        -- Tsserver usually works poorly. Sorry you work with bad languages
-        -- You can remove this line if you know what you're doing :)
         if client.name == 'tsserver' then
           return
         end
@@ -106,19 +111,16 @@ return {
         vim.api.nvim_create_autocmd('BufWritePre', {
           buffer = bufnr,
           callback = function()
-            if client.name == 'vue' then
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                command = "EslintFixAll",
-              })
-            else
-              vim.lsp.buf.format {
-                async = false,
-                filter = function(c)
-                  return c.id == client.id
-                end,
-              }
+            local is_vue = vim.api.nvim_buf_get_option(bufnr, 'filetype') == 'vue'
+            if is_vue then
+              return
             end
+            vim.lsp.buf.format {
+              async = false,
+              filter = function(c)
+                return c.id == client.id
+              end,
+            }
           end,
         })
       end,

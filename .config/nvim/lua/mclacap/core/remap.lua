@@ -5,11 +5,11 @@ vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set({ 'i', 'v' }, 'jk', '<Esc>', { desc = 'Escape' })
 vim.keymap.set({ 'n', 'i', 'v' }, 'jk', '<Esc>', { desc = 'Escape' })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
+--
+-- -- Remap for dealing with word wrap
+-- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+--
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -34,3 +34,4 @@ vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<CR>', { desc = 'Find b
 vim.keymap.set('n', '<leader>bC', '<cmd>bufdo bd<CR>', { desc = 'Close all buffers' })
 vim.keymap.set('n', '<leader>bc', '<cmd>BufOnly silent! execute "%bd|e#|bd#"',
   { desc = 'Close all except current buffer' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = 'Close current buffer' })

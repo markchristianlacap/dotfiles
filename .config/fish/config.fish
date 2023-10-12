@@ -53,3 +53,6 @@ alias lla 'ls -alh --color=auto'
 alias l 'ls -CF --color=auto'
 alias vim nvim
 alias vi nvim
+alias cls clear
+alias c cls
+
