@@ -10,7 +10,6 @@ return {
 
     return {
       options = {
-        theme = 'auto',
         globalstatus = true,
         disabled_filetypes = { statusline = { 'dashboard', "alpha" } },
         theme = 'tokyonight',
@@ -65,4 +64,3 @@ return {
     }
   end,
 }
-

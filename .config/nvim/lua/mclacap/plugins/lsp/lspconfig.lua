@@ -106,7 +106,7 @@ return {
         vim.api.nvim_create_autocmd('BufWritePre', {
           buffer = bufnr,
           callback = function()
-            if client.name == 'volar' then
+            if client.name == 'vue' then
               vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = bufnr,
                 command = "EslintFixAll",

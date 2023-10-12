@@ -20,3 +20,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- [[buffer navigation]]
+
+-- Move between buffers with [b and ]b
+
+vim.keymap.set('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+
+-- navigate with buffers using interactive popup
+vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers<CR>', { desc = 'Find buffer' })
+-- closing buffers with all and except current
+vim.keymap.set('n', '<leader>bC', '<cmd>bufdo bd<CR>', { desc = 'Close all buffers' })
+vim.keymap.set('n', '<leader>bc', '<cmd>BufOnly silent! execute "%bd|e#|bd#"',
+  { desc = 'Close all except current buffer' })
