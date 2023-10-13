@@ -6,10 +6,11 @@
 
 - Arch Linux
 
-## Patched Software
+## Other Software Used
 
 - [Patched DWM](https://github.com/markchristianlacap/dwm)
 - [Patched slstatus](https://github.com/markchristianlacap/slstatus)
+- [AstroNvim Config](https://github.com/markchristianlacap/astronvim)
 
 ## Included configuration files
 
@@ -19,7 +20,6 @@
 - pipewire
 - fish 
 - tmux
-- nvim
 
 ## Preview
 

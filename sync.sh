@@ -2,7 +2,6 @@ cp $HOME/.config/picom .config/ -r
 cp $HOME/.config/kitty .config/ -r
 cp $HOME/.config/pipewire .config/ -r
 cp $HOME/.config/fish .config/ -r
-cp $HOME/.config/nvim .config/ -r
 cp $HOME/.config/tmux/tmux.conf .config/tmux -r
 cp $HOME/.dwm ./ -r
 cp $HOME/.scripts ./ -r
