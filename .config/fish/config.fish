@@ -1,6 +1,7 @@
 # Exports
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+set PATH $HOME/.dotnet/tools $PATH
 
 # prompt
 starship init fish | source
@@ -10,7 +11,6 @@ fish_vi_key_bindings
 
 # variables
 set fish_greeting
-set PATH /home/mark/.dotnet/tools $PATH
 
 # abbreviations
 
