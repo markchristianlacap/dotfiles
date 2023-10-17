@@ -1,0 +1,47 @@
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# open browser
+super + o
+	firefox
+
+# open vscode
+super + v
+	code
+
+# power menu
+super + shift + s
+	sh $HOME/.scripts/powermenu.sh
+
+# screenshot
+Print
+	flameshot gui
+
+# open mixer
+super + n
+	pavucontrol
+
+# open file manager
+super + e
+	thunar
+
+# lock screen
+super + shift + l
+	slock
+
+# increase volume using amixer 
+XF86AudioRaiseVolume
+	amixer -q sset Master 5%+
+
+# decrease volume using amixer
+XF86AudioLowerVolume
+	amixer -q sset Master 5%-
+
+# mute volume using amixer
+XF86AudioMute
+	amixer -q sset Master toggle
+
+# open bluetooth manager  
+super + shift + b
+  blueberry	
