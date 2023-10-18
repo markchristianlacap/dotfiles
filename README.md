@@ -1,6 +1,6 @@
-# Linux Dotfiles 
+# Linux Dotfiles
 
-- This is my suckless setup. 
+- This is my suckless setup.
 
 ## Operating System
 
@@ -18,8 +18,9 @@
 - dmenu
 - picom
 - pipewire
-- fish 
+- fish
 - tmux
+- sxhkd
 
 ## Preview
 
