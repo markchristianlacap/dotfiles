@@ -1,8 +1,8 @@
 case "$(echo -e "Shutdown\nRestart\nLogout\nSuspend\nLock" | dmenu \
     -nb "${COLOR_BACKGROUND:-#282a36}" \
-    -nf "${COLOR_DEFAULT:-#f8f8f2}" \
-    -sf "${COLOR_HIGHLIGHT:-#cfc9c2}" \
-    -sb "#414869" \
+    -nf "${COLOR_DEFAULT:-#eeeeee}" \
+    -sf "${COLOR_HIGHLIGHT:-#bbbbbb}" \
+    -sb "#8839ef" \
      -p \
     "Power:" -l 5)" in
         Shutdown) exec systemctl poweroff;;
