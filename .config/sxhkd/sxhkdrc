@@ -45,3 +45,11 @@ XF86AudioMute
 # open bluetooth manager  
 super + shift + b
   blueberry	
+
+# open mail client
+super + shift + m
+	thunderbird
+
+# open tmux on st 
+super + shift + t
+	st -e tmux new-session -A -s main

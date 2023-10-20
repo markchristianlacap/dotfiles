@@ -46,6 +46,13 @@ abbr --add pi pnpm i
 abbr --add pu pnpm up
 abbr --add pr pnpm run
 
+# tmux
+abbr --add t tmux
+abbr --add ta tmux attach
+abbr --add tl tmux ls
+abbr --add tk tmux kill-session
+abbr --add tn tmux new-session
+
 # aliases
 alias ls 'ls -h --color=auto'
 alias ll 'ls -lh --color=auto'

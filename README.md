@@ -10,11 +10,11 @@
 
 - [Patched DWM](https://github.com/markchristianlacap/dwm)
 - [Patched slstatus](https://github.com/markchristianlacap/slstatus)
+- [Patched st](https://github.com/markchristianlacap/st)
 - [AstroNvim Config](https://github.com/markchristianlacap/astronvim)
 
 ## Included configuration files
 
-- kitty
 - dmenu
 - picom
 - pipewire
