@@ -52,4 +52,4 @@ super + shift + m
 
 # open tmux on st 
 super + shift + t
-	st -T 'st-float' -e tmux new-session -A -s main
+	st -T "st-float" -e tmux new-session -A -s main
