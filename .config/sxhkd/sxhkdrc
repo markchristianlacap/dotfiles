@@ -44,7 +44,7 @@ XF86AudioMute
 
 # open bluetooth manager  
 super + shift + b
-  blueberry	
+  blueman-manager	
 
 # open mail client
 super + shift + m

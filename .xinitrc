@@ -1,8 +1,3 @@
-# see https://unix.stackexchange.com/a/295652/332452
-source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
-
-# see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
-eval $(/usr/bin/gnome-keyring-daemon --start)
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -12,4 +7,5 @@ xrandr &
 picom -b &
 slstatus &
 sxhkd &
+nvidia-settings --load-config-only &
 exec dwm 

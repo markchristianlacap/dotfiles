@@ -3,9 +3,6 @@ export VISUAL="nvim"
 export EDITOR="$VISUAL"
 set PATH $HOME/.dotnet/tools $PATH
 
-# prompt
-starship init fish | source
-
 # vi mode
 fish_vi_key_bindings
 bind --mode insert --sets-mode default jk repaint
