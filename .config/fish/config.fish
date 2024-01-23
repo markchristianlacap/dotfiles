@@ -29,13 +29,13 @@ abbr --add g git
 
 # docker
 abbr --add d docker
-abbr --add dc docker-compose
-abbr --add dcb docker-compose build
-abbr --add dcd docker-compose down
-abbr --add dcr docker-compose run
-abbr --add dce docker-compose exec
-abbr --add dcl docker-compose logs
-abbr --add dcu docker-compose up
+abbr --add dc docker compose
+abbr --add dcb docker compose build
+abbr --add dcd docker compose down
+abbr --add dcr docker compose run
+abbr --add dce docker compose exec
+abbr --add dcl docker compose logs
+abbr --add dcu docker compose up
 
 #pnpm 
 abbr --add p pnpm
