@@ -13,6 +13,9 @@ super + v
 # power menu
 super + shift + s
 	sh $HOME/.scripts/powermenu.sh
+# vbox 
+super + shift + v
+	sh $HOME/.scripts/vbox.sh
 
 # screenshot
 Print

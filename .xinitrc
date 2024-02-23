@@ -8,4 +8,5 @@ picom -b &
 slstatus &
 sxhkd &
 nvidia-settings --load-config-only &
+flameshot &
 exec dwm 
