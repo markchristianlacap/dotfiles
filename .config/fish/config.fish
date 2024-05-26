@@ -1,6 +1,7 @@
 # Exports
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+export ANDROID_HOME="/home/$USER/Android/SDK"
 set PATH $HOME/.dotnet/tools $PATH
 
 # vi mode

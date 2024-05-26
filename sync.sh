@@ -1,4 +1,6 @@
 cp $HOME/.config/picom .config/ -r
+cp $HOME/.config/alacritty .config/ -r
+cp $HOME/.config/nvim .config/ -r
 cp $HOME/.config/sxhkd .config/ -r
 cp $HOME/.config/pipewire .config/ -r
 cp $HOME/.config/fish .config/ -r
