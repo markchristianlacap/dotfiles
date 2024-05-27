@@ -51,6 +51,10 @@ abbr --add tl tmux ls
 abbr --add tk tmux kill-session
 abbr --add tn tmux new-session
 
+# php
+abbr --add ph php 
+abbr --add pha php artisan
+
 # aliases
 alias ls 'ls -h --color=auto'
 alias ll 'ls -lh --color=auto'
