@@ -1,6 +1,6 @@
-# Linux Dotfiles
+# My linux .dotfiles 
 
-- This is my suckless setup.
+This is my suckless setup. I use this as my personal dotfiles. The color scheme is based on the [catppuccin mocha](https://github.com/catppuccin/catppuccin) theme. You can check the config files but it might not work for you.
 
 ## Operating System
 
@@ -8,19 +8,19 @@
 
 ## Other Software Used
 
-- [Patched DWM](https://github.com/markchristianlacap/dwm)
-- [Patched slstatus](https://github.com/markchristianlacap/slstatus)
-- [Patched st](https://github.com/markchristianlacap/st)
-- [AstroNvim Config](https://github.com/markchristianlacap/astronvim)
+- [dwm](https://github.com/markchristianlacap/dwm)
+- [slstatus](https://github.com/markchristianlacap/slstatus)
+- [st](https://github.com/markchristianlacap/st)
+- [nvim config](https://github.com/markchristianlacap/init.lua)
 
 ## Included configuration files
 
-- dmenu
 - picom
 - pipewire
-- fish
+- zsh 
 - tmux
 - sxhkd
+- fzf
 
 ## Preview
 
