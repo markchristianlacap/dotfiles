@@ -45,6 +45,10 @@ alias ls="exa --icons"
 alias la="exa --icons -a"
 alias ll="exa --icons -l"
 alias cls="clear"
+alias p="pnpm"
+alias pa="php artisan"
+alias dc="docker compose"
+alias sc="sudo systemctl"
 
 ## sources
 eval "$(zoxide init --cmd cd zsh)"
