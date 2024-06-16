@@ -40,6 +40,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 ## aliases
 alias vim="nvim"
+alias vi="nvim"
 alias ls="exa --icons"
 alias la="exa --icons -a"
 alias ll="exa --icons -l"
