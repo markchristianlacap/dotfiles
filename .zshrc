@@ -1,5 +1,18 @@
 autoload -U colors && colors
-PS1="%B%{$fg[yellow]%}%~%{$fg[magenta]%} $%b "
+GIT_BRANCH_ICON='\ue0a0'
+COLOR_DEF=$'%F{magenta}'
+COLOR_DIR=$'%F{cyan}'
+COLOR_GIT=$'%F{red}'
+function git_branch() {
+  ref=$(git symbolic-ref --short HEAD 2> /dev/null)
+  if [ -n "$ref" ]; then
+     echo " ${BOLD}${GIT_BRANCH_ICON} $ref${RESET_BOLD}"
+  fi
+  
+}
+
+setopt PROMPT_SUBST
+PS1='${COLOR_DIR}%~${COLOR_GIT}$(git_branch)${COLOR_DEF}   '
 setopt autocd	
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -13,7 +26,6 @@ compinit
 
 # # vi mode
 bindkey -v
-export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -21,22 +33,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 ## aliases
 alias vim="nvim"
