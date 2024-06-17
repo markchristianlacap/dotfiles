@@ -1,5 +1,5 @@
 autoload -U colors && colors
-PS1="%B%{$fg[green]%}%~%{$fg[magenta]%} $%b "
+PS1="%B%{$fg[yellow]%}%~%{$fg[magenta]%} $%b "
 setopt autocd	
 HISTSIZE=10000000
 SAVEHIST=10000000
