@@ -1,4 +1,6 @@
-export PATH=$HOME/.dotnet/tools:$HOME/.scripts:$PATH
+export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$PATH
+export EDITOR=nvim
+
 autoload -U colors && colors
 GIT_BRANCH_ICON='\ue0a0'
 COLOR_DEF=$'%F{yellow}'
@@ -53,4 +55,3 @@ source <(fzf --zsh)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-PATH=~/.console-ninja/.bin:$PATH
