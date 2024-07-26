@@ -1,10 +1,11 @@
-export PATH=$HOME/.dotnet/tools:$HOME/.scripts:$PATH
+export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$PATH
+export EDITOR=nvim
+
 autoload -U colors && colors
 GIT_BRANCH_ICON='\ue0a0'
 COLOR_DEF=$'%F{yellow}'
 COLOR_DIR=$'%F{cyan}'
 COLOR_GIT=$'%F{red}'
-COLOR_RESET=$'%f'
 function git_branch() {
   ref=$(git symbolic-ref --short HEAD 2> /dev/null)
   if [ -n "$ref" ]; then
@@ -14,7 +15,7 @@ function git_branch() {
 }
 
 setopt PROMPT_SUBST
-PS1='${COLOR_DIR}%~${COLOR_GIT}$(git_branch)${COLOR_DEF} $ ${COLOR_RESET}'
+PS1='${COLOR_DIR}%~${COLOR_GIT}$(git_branch)${COLOR_DEF} $ '
 setopt autocd	
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -53,5 +54,3 @@ eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
