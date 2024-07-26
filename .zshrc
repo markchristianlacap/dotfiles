@@ -47,11 +47,11 @@ alias p="pnpm"
 alias pa="php artisan"
 alias dc="docker compose"
 alias sc="sudo systemctl"
-
+alias ssh="kitty +kitten ssh"
 ## sources
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-PATH=~/.console-ninja/.bin:$PATH
+
