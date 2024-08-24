@@ -30,7 +30,7 @@ super + e
 	thunar
 
 # lock screen
-alt + L
+ctrl + alt + l
 	slock
 
 # increase volume using amixer 
