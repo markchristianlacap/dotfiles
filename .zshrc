@@ -1,4 +1,4 @@
-export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$PATH
+export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
 
 autoload -U colors && colors
