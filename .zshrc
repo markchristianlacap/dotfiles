@@ -1,9 +1,12 @@
+function git_branch() {
+  git rev-parse --abbrev-ref HEAD 2>/dev/null || echo ""
+}
+setopt PROMPT_SUBST
+PROMPT='%F{blue}%~ %F{244}$(git_branch) 
+%F{green}$ %f'
 export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
-
 autoload -U colors && colors
-setopt PROMPT_SUBST
-PS1='%F{blue}%~ %F{green}> %f'
 setopt autocd	
 HISTSIZE=10000000
 SAVEHIST=10000000
