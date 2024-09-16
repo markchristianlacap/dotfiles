@@ -15,7 +15,7 @@ if [ "$BATTERY_LEVEL" -le 20 ] && [ "$CHARGING_STATUS" = "Discharging" ]; then
 fi
 
 # Notify if battery is fully charged and charging
-if [ "$BATTERY_LEVEL" -ge 98 ] && [ "$CHARGING_STATUS" = "Full" ]; then
+if [ "$BATTERY_LEVEL" -ge 98 ] && [ "$CHARGING_STATUS" = "Charging" ]; then
     notify-send "Battery Full" "Battery is fully charged. Unplug the charger."
 fi
 

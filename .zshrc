@@ -2,20 +2,8 @@ export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$HOME/.carg
 export EDITOR=nvim
 
 autoload -U colors && colors
-GIT_BRANCH_ICON='\ue0a0'
-COLOR_DEF=$'%F{yellow}'
-COLOR_DIR=$'%F{cyan}'
-COLOR_GIT=$'%F{red}'
-function git_branch() {
-  ref=$(git symbolic-ref --short HEAD 2> /dev/null)
-  if [ -n "$ref" ]; then
-     echo " ${BOLD}${GIT_BRANCH_ICON} $ref${RESET_BOLD}"
-  fi
-  
-}
-
 setopt PROMPT_SUBST
-PS1='${COLOR_DIR}%~${COLOR_GIT}$(git_branch)${COLOR_DEF} $ '
+PS1='%F{blue}%~ %F{green}> %f'
 setopt autocd	
 HISTSIZE=10000000
 SAVEHIST=10000000
