@@ -1,7 +1,7 @@
+window-decoration = false
 font-family = Iosevka Nerd Font Mono
 font-size = 15
 theme = Kanagawa Wave 
-gtk-titlebar = false
-gtk-wide-tabs = false
-gtk-adwaita = false
 background-opacity = 0.9
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
