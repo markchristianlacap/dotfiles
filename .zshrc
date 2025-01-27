@@ -6,6 +6,7 @@ PROMPT='%F{blue}%~ %F{244}$(git_branch)
 %F{green}$ %f'
 export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
+export TERM=xterm-256color
 autoload -U colors && colors
 setopt autocd	
 HISTSIZE=10000000
@@ -39,7 +40,6 @@ alias p="pnpm"
 alias pa="php artisan"
 alias dc="docker compose"
 alias sc="sudo systemctl"
-alias ssh="kitty +kitten ssh"
 ## sources
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
