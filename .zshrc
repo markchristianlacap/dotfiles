@@ -4,9 +4,8 @@ function git_branch() {
 setopt PROMPT_SUBST
 PROMPT='%F{blue}%~ %F{244}$(git_branch) 
 %F{green}$ %f'
-export PATH=$HOME/.dotnet/tools:$HOME/.scripts:~/.console-ninja/.bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
-export TERM=xterm-256color
 autoload -U colors && colors
 setopt autocd	
 HISTSIZE=10000000
