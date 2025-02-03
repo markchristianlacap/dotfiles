@@ -2,7 +2,7 @@ function git_branch() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null || echo ""
 }
 setopt PROMPT_SUBST
-PROMPT='%F{blue}%~ %F{244}$(git_branch) 
+PROMPT='%F{yellow}%~ %F{244}$(git_branch) 
 %F{green}$ %f'
 export PATH=$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
