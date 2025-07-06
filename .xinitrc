@@ -6,7 +6,7 @@ xrandr &
 ~/.fehbg &
 picom -b &
 slstatus &
-sxhkd &
 nvidia-settings --load-config-only &
+sxhkd &
 flameshot &
 exec dwm 
