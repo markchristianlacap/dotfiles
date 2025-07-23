@@ -4,6 +4,7 @@ cp $HOME/.config/pipewire .config/ -r
 cp $HOME/.config/yazi/init.lua .config/yazi -r
 cp $HOME/.config/yazi/keymap.toml .config/yazi -r
 cp $HOME/.config/yazi/package.toml .config/yazi -r
+cp $HOME/.config/yazi/theme.toml .config/yazi -r
 cp $HOME/.config/wezterm .config/ -r
 cp $HOME/.config/tmux/tmux.conf .config/tmux -r
 cp $HOME/.scripts ./ -r
