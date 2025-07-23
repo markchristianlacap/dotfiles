@@ -25,6 +25,9 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 - [slstatus](https://github.com/markchristianlacap/slstatus)
 - [nvim config](https://github.com/markchristianlacap/init.lua)
 
+## Fonts
+
+- Monaspace [Github](https://github.com/githubnext/monaspace) 
 
 ## Preview
 
