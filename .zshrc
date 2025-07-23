@@ -1,6 +1,13 @@
 function git_branch() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null || echo ""
 }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 setopt PROMPT_SUBST
 PROMPT='%F{yellow}%~ %F{244}$(git_branch) 
 %F{green}$ %f'
