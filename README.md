@@ -18,6 +18,7 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 - zoxide
 - yazi 
 - wezterm 
+- eza 
 
 ## Other Software Used
 

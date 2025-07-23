@@ -38,9 +38,9 @@ bindkey -v '^?' backward-delete-char
 ## aliases
 alias vim="nvim"
 alias vi="nvim"
-alias ls="exa --icons"
-alias la="exa --icons -a"
-alias ll="exa --icons -l"
+alias ls="eza --icons"
+alias la="eza --icons -a"
+alias ll="eza --icons -l"
 alias cls="clear"
 alias p="pnpm"
 alias pa="php artisan"
