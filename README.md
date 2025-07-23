@@ -6,13 +6,6 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 
 - Arch Linux
 
-## Other Software Used
-
-- [dwm](https://github.com/markchristianlacap/dwm)
-- [slstatus](https://github.com/markchristianlacap/slstatus)
-- [st](https://github.com/markchristianlacap/st)
-- [nvim config](https://github.com/markchristianlacap/init.lua)
-
 ## Included configuration files
 
 - picom
@@ -23,6 +16,15 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 - fzf
 - nvim
 - zoxide
+- yazi 
+- wezterm 
+
+## Other Software Used
+
+- [dwm](https://github.com/markchristianlacap/dwm)
+- [slstatus](https://github.com/markchristianlacap/slstatus)
+- [nvim config](https://github.com/markchristianlacap/init.lua)
+
 
 ## Preview
 
