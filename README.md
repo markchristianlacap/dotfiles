@@ -28,7 +28,7 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 
 ## Fonts
 
-- Monaspace [Github](https://github.com/githubnext/monaspace) 
+- Iosevka Nerd Font Mono 
 
 ## Preview
 
