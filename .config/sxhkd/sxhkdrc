@@ -35,11 +35,11 @@ ctrl + alt + l
 
 # increase volume using amixer 
 XF86AudioRaiseVolume
-	amixer -q sset Master 5%+
+	amixer -q sset Master 1%+
 
 # decrease volume using amixer
 XF86AudioLowerVolume
-	amixer -q sset Master 5%-
+	amixer -q sset Master 1%-
 
 # mute volume using amixer
 XF86AudioMute
@@ -48,11 +48,3 @@ XF86AudioMute
 # open bluetooth manager  
 super + shift + b
   blueberry	
-
-# open mail client
-super + shift + m
-	thunderbird
-
-# open tmux on st 
-super + shift + t
-	st -T "st-float" -e tmux new-session -A -s main
