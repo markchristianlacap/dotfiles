@@ -2,11 +2,12 @@ export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_CONFIG_HOME="$HOME/.config"
 
-xrandr &
+xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --output DP-0 --primary --mode 1920x1080 --left-of HDMI-0 &
+dunst &
 ~/.fehbg &
 picom -b &
 slstatus &
-nvidia-settings --load-config-only &
 sxhkd &
+#nvidia-settings --load-config-only &
 flameshot &
 exec dwm 
