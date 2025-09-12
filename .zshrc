@@ -9,8 +9,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 setopt PROMPT_SUBST
-PROMPT='%F{yellow}%~ %F{244}$(git_branch) 
-%F{green}$ %f'
+PROMPT='%F{green}%n@%m %F{blue}%~ %F{red}$(git_branch)
+%F{#90ee90}$ %{$reset_color%}'
 export PATH=$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
 autoload -U colors && colors
