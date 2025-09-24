@@ -6,6 +6,7 @@ cp $HOME/.config/yazi/keymap.toml .config/yazi -r
 cp $HOME/.config/yazi/package.toml .config/yazi -r
 cp $HOME/.config/yazi/theme.toml .config/yazi -r
 cp $HOME/.config/wezterm .config/ -r
+cp $HOME/.config/ghostty .config/ -r
 cp $HOME/.scripts ./ -r
 cp $HOME/.xinitrc ./ -r
 cp $HOME/.zshrc ./ -r
