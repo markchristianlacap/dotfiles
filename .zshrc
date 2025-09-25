@@ -13,6 +13,7 @@ PROMPT='%F{green}%n@%m %F{blue}%~ %F{red}$(git_branch)
 %F{#90ee90}$ %{$reset_color%}'
 export PATH=$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
+export TERM=xterm-256color
 autoload -U colors && colors
 setopt autocd	
 HISTSIZE=10000000

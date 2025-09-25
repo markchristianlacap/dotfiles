@@ -7,6 +7,7 @@ window-padding-y = 10
 font-family = Iosevka SS04 
 background-blur = true
 gtk-tabs-location = hidden
+working-directory = home
 
 keybind = ctrl+shift+tab=toggle_tab_overview
 keybind = ctrl+shift+h=goto_split:left
