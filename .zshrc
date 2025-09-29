@@ -1,55 +1,110 @@
-function git_branch() {
-  git rev-parse --abbrev-ref HEAD 2>/dev/null || echo ""
-}
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-setopt PROMPT_SUBST
-PROMPT='%F{green}%n@%m %F{blue}%~ %F{red}$(git_branch)
-%F{#90ee90}$ %{$reset_color%}'
-export PATH=$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH
-export EDITOR=nvim
-export TERM=xterm-256color
+########################################
+# Environment
+########################################
+export PATH="$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH"
+export EDITOR="nvim"
+export TERM="xterm-256color"
+
+########################################
+# History
+########################################
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE="$HOME/.cache/zsh/history"
+
+setopt inc_append_history      # Append history, don’t overwrite
+setopt share_history           # Share history across sessions
+setopt hist_ignore_dups        # Don’t record duplicates
+setopt hist_reduce_blanks      # Trim unnecessary spaces
+
+########################################
+# Options
+########################################
+setopt autocd                  # Just type dir to cd
+setopt prompt_subst            # Allow prompt functions
+
+########################################
+# Prompt
+########################################
 autoload -U colors && colors
-setopt autocd	
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTFILE=$HOME/.cache/zsh/history
-setopt inc_append_history
 
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-autoload -Uz compinit
-compinit
+git_branch() {
+  git symbolic-ref --quiet --short HEAD 2>/dev/null || :
+}
 
-# # vi mode
-bindkey -v
+git_branch_prompt() {
+  local branch
+  branch=$(git_branch)
+  [[ -n $branch ]] && print " %F{red}$branch"
+}
 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+PROMPT='%F{green}%n@%m %F{blue}%~$(git_branch_prompt)
+%F{#90ee90}$ %{$reset_color%}'
+
+########################################
+# Functions
+########################################
+# Open yazi and return to last directory
+y() {
+  local tmp cwd
+  tmp=$(mktemp -t "yazi-cwd.XXXXXX") || return
+  trap 'rm -f "$tmp"' EXIT
+  yazi "$@" --cwd-file="$tmp"
+  if IFS= read -r -d '' cwd <"$tmp" && [[ -n $cwd && $cwd != $PWD ]]; then
+    builtin cd -- "$cwd"
+  fi
+  trap - EXIT
+}
+
+########################################
+# Keybindings
+########################################
+bindkey -v                           # Vi mode
 bindkey -v '^?' backward-delete-char
 
-## aliases
+########################################
+# Aliases
+########################################
 alias vim="nvim"
 alias vi="nvim"
+
 alias ls="eza --icons"
 alias la="eza --icons -a"
 alias ll="eza --icons -l"
+
 alias cls="clear"
 alias p="pnpm"
 alias pa="php artisan"
 alias dc="docker compose"
 alias sc="sudo systemctl"
-## sources
+
+# Useful directory jumps
+alias ..="cd .."
+alias ...="cd ../.."
+
+########################################
+# Completion
+########################################
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+autoload -Uz compinit
+compinit
+
+########################################
+# Plugins
+########################################
+# Zoxide (smart cd)
 eval "$(zoxide init --cmd cd zsh)"
+
+# FZF integration
 source <(fzf --zsh)
+
+# Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-autoload -U compinit; compinit
+
+# VI mode
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
