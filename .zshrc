@@ -57,12 +57,6 @@ y() {
 }
 
 ########################################
-# Keybindings
-########################################
-bindkey -v                           # Vi mode
-bindkey -v '^?' backward-delete-char
-
-########################################
 # Aliases
 ########################################
 alias vim="nvim"
@@ -96,9 +90,6 @@ compinit
 # Zoxide (smart cd)
 eval "$(zoxide init --cmd cd zsh)"
 
-# FZF integration
-source <(fzf --zsh)
-
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -108,3 +99,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # VI mode
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
