@@ -1,9 +1,0 @@
-[[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "1ab21d4"
-hash = "3996fc74044bc44144b323686f887e1"
-
-[[flavor.deps]]
-use = "dangooddd/kanagawa"
-rev = "31167ed"
-hash = "a04e157148549bacbb2831aab0e6e8cb"

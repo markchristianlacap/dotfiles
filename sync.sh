@@ -2,11 +2,8 @@ cp $HOME/.config/picom .config/ -r
 cp $HOME/.config/sxhkd .config/ -r
 cp $HOME/.config/pipewire .config/ -r
 cp $HOME/.config/tmux/tmux.conf .config/tmux/ -r
-cp $HOME/.config/yazi/init.lua .config/yazi -r
-cp $HOME/.config/yazi/keymap.toml .config/yazi -r
-cp $HOME/.config/yazi/package.toml .config/yazi -r
-cp $HOME/.config/yazi/theme.toml .config/yazi -r
-cp $HOME/.config/kitty .config/ -r
 cp $HOME/.scripts ./ -r
 cp $HOME/.xinitrc ./ -r
 cp $HOME/.zshrc ./ -r
+cp $HOME/.zprofile ./ -r
+cp $HOME/.Xresources ./ -r
