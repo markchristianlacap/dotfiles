@@ -72,10 +72,6 @@ alias pa="php artisan"
 alias dc="docker compose"
 alias sc="sudo systemctl"
 
-# Useful directory jumps
-alias ..="cd .."
-alias ...="cd ../.."
-
 ########################################
 # Completion
 ########################################
@@ -87,9 +83,6 @@ compinit
 ########################################
 # Plugins
 ########################################
-# Zoxide (smart cd)
-eval "$(zoxide init --cmd cd zsh)"
-
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -99,6 +92,16 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # VI mode
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+# Disable default ^R binding to work with fzf
+function zvm_after_init() {
+  zvm_bindkey viins "^R" fzf-history-widget
+}
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+
+# Zoxide (smart cd)
+eval "$(zoxide init --cmd cd zsh)"
+
+
