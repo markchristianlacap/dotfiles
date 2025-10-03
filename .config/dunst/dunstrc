@@ -1,0 +1,31 @@
+[global]
+    font = Iosevka SS04 10
+    frame_width = 2
+    separator_height = 2
+    corner_radius = 2
+    padding = 12
+    horizontal_padding = 16
+    icon_position = left
+    line_height = 0
+    transparency = .9
+    separator_color = frame
+    mouse_left_click = close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#181616"   # background
+    foreground = "#c5c9c5"   # foreground
+    frame_color = "#8ea4a2"  # cyan
+    timeout = 5
+
+[urgency_normal]
+    background = "#0d0c0c"   # black
+    foreground = "#c8c093"   # white (dim)
+    frame_color = "#7fb4ca"  # blue (bright)
+    timeout = 8
+
+[urgency_critical]
+    background = "#181616"   # background
+    foreground = "#e46876"   # bright red
+    frame_color = "#c4746e"  # red
+    timeout = 0
