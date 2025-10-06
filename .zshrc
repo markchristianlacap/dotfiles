@@ -95,6 +95,7 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 # Disable default ^R binding to work with fzf
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
+  bindkey "^g" autosuggest-accept
 }
 
 # Set up fzf key bindings and fuzzy completion
