@@ -26,3 +26,4 @@ _darcs
 .*\.png
 .*\.jpg
 .*\.sh
+\.config/tmux/plugins

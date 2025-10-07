@@ -16,7 +16,7 @@ return {
       ensure_installed = {
         "csharpier",
         "cspell",
-        "roslyn",
+        "roslyn-unstable",
       },
     }
     -- enable mason and configure icons
