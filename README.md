@@ -29,3 +29,7 @@ This is my suckless setup. I use this as my personal dotfiles. The color scheme 
 ## Fonts
 
 - Iosevka SS04
+
+## Preview
+
+![dwm](./preview.png)
