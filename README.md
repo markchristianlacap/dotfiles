@@ -1,36 +1,44 @@
-## .dotfiles 
+# 🏠 .dotfiles  
 
-This is my suckless setup. I use this as my personal dotfiles. The color scheme is based on the [kanagawa dragon](https://github.com/rebelot/kanagawa.nvim) theme. You can check the config files but it might not work for you.
+My personal **suckless setup** — minimal, fast, and built for Arch Linux.  
+The color palette is based on the [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim) theme.  
+You're welcome to explore or reuse parts of it, but note that some settings are highly customized.
 
-### Operating System
+---
 
-- Arch Linux
+### 💻 Operating System
+- **Arch Linux**
 
-### Included configuration files
+---
 
-- picom
-- pipewire
-- zsh 
-- tmux
-- sxhkd
-- fzf
-- nvim
-- zoxide
-- yazi 
-- eza 
+### ⚙️ Configurations
+- picom – compositor for transparency and shadows  
+- pipewire – modern audio server  
+- zsh – shell setup with aliases and plugins  
+- tmux – terminal multiplexer  
+- sxhkd – hotkey daemon  
+- fzf – fuzzy finder  
+- nvim – Neovim configuration  
+- zoxide – smarter `cd`  
+- yazi – terminal file manager  
+- eza – modern `ls` replacement  
 
-### Other Software Used
+---
 
-- [dwm](https://github.com/markchristianlacap/dwm)
-- [st](https://github.com/markchristianlacap/st)
-- [dmenu](https://github.com/markchristianlacap/dmenu)
-- [dwmblock-async](https://github.com/markchristianlacap/dwmblocks-async)
+### 🧱 Suckless Components
+- [**dwm**](https://github.com/markchristianlacap/dwm)  
+- [**st**](https://github.com/markchristianlacap/st)  
+- [**dmenu**](https://github.com/markchristianlacap/dmenu)  
+- [**dwmblocks-async**](https://github.com/markchristianlacap/dwmblocks-async)  
 
-### Fonts
+---
 
-- Iosevka SS04
-- Symbols Nerd Font
+### ✨ Fonts
+- **Iosevka SS04**  
+- **Symbols Nerd Font**
 
-### Preview
+---
 
+### 📸 Preview
 ![dwm](./preview.png)
+
