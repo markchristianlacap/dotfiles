@@ -1,49 +1,47 @@
+-- Leader keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-
-local function map(mode, lhs, rhs, desc)
-  keymap(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
+-- Utility for simpler mappings
+local map = function(mode, lhs, rhs, desc)
+  vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
 end
 
 -- Basics
-map("i", "jk", "<ESC>", "Better escape")
+map("i", "jk", "<ESC>", "Escape insert")
 map("n", "<leader><leader>", "<cmd>nohlsearch<CR>", "Clear highlight")
 
--- Movement
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", "Move selection down")
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", "Move selection up")
+-- Move lines / selections
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", "Move down")
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", "Move up")
 map("n", "<A-j>", ":m .+1<CR>==", "Move line down")
 map("n", "<A-k>", ":m .-2<CR>==", "Move line up")
 map("n", "J", "mzJ`z", "Join lines")
-map("n", "n", "nzzzv", "Center search results")
-map("n", "N", "Nzzzv", "Center search results")
+map("n", "n", "nzzzv", "Center search")
+map("n", "N", "Nzzzv", "Center search")
 
 -- Clipboard
-map("x", "<leader>p", [["_dP]], "Paste without losing original content")
-map({ "n", "v" }, "<leader>y", [["+y]], "Copy to clipboard")
-map("n", "<leader>Y", [["+Y]], "Copy line to clipboard")
-map({ "n", "v" }, "<leader>d", [["_d]], "Delete without losing original content")
+map("x", "<leader>p", [["_dP]], "Paste keep")
+map({ "n", "v" }, "<leader>y", [["+y]], "Yank")
+map("n", "<leader>Y", [["+Y]], "Yank line")
+map({ "n", "v" }, "<leader>d", [["_d]], "Delete keep")
 
 -- Navigation
-map("n", "<C-d>", "<C-d>zz", "Scroll down and center")
-map("n", "<C-u>", "<C-u>zz", "Scroll up and center")
-map("v", ">", ">gv", "Indent and stay in visual")
-map("v", "<", "<gv", "Unindent and stay in visual")
+map("n", "<C-d>", "<C-d>zz", "Scroll down")
+map("n", "<C-u>", "<C-u>zz", "Scroll up")
+map("v", ">", ">gv", "Indent stay")
+map("v", "<", "<gv", "Unindent stay")
 
--- Buffer management
+-- Buffers
 map("n", "<leader>c", "<cmd>bd<CR>", "Close buffer")
-map("n", "<leader>bC", "<cmd>bufdo bd<CR>", "Close all buffers")
-map("n", "<leader>bc", "<cmd>%bd|e#<CR>", "Close other buffers")
+map("n", "<leader>bC", "<cmd>bufdo bd<CR>", "Close all")
+map("n", "<leader>bc", "<cmd>%bd|e#<CR>", "Close others")
 
 -- Splits
-map("n", "<leader>sv", "<cmd>vsplit<CR>", "Vertical split")
-map("n", "<leader>sh", "<cmd>split<CR>", "Horizontal split")
+map("n", "<leader>sv", "<cmd>vsplit<CR>", "Split vertical")
+map("n", "<leader>sh", "<cmd>split<CR>", "Split horizontal")
 
 -- Save / Quit
-map("n", "<leader>w", "<cmd>w<CR>", "Save file")
-map("n", "<leader>q", "<cmd>q<CR>", "Quit window")
+map("n", "<leader>w", "<cmd>w<CR>", "Save")
+map("n", "<leader>q", "<cmd>q<CR>", "Quit")
 map("n", "<leader>wq", "<cmd>wq<CR>", "Save and quit")
-

@@ -4,21 +4,15 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("kanagawa").setup {
-        transparent = true, -- do not set background color
-      }
-      vim.cmd.colorscheme "kanagawa-dragon"
+      require("kanagawa").setup({ transparent = true })
+      vim.cmd.colorscheme("kanagawa-dragon")
     end,
   },
   {
     "stevearc/oil.nvim",
-    ---@module "oil"
-    ---@type oil.SetupOpts
     opts = {
       skip_confirm_for_simple_edits = true,
-      view_options = {
-        show_hidden = true,
-      },
+      view_options = { show_hidden = true },
       keymaps = {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["<CR>"] = "actions.select",
@@ -40,13 +34,9 @@ return {
       use_default_keymaps = false,
     },
     lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      {
-        "<leader>e",
-        "<CMD>Oil<CR>",
-        { desc = "Open Oil Explorer" },
-      },
+      { "<leader>e", "<CMD>Oil<CR>", desc = "Open Oil Explorer" },
     },
   },
   {
