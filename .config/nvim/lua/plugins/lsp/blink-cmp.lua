@@ -20,6 +20,7 @@ return {
       --   list = { selection = { preselect = false, auto_insert = true } },
       -- },
       completion = { documentation = { auto_show = false } },
+
       appearance = {
         nerd_font_variant = "mono",
       },
@@ -31,7 +32,7 @@ return {
           "path",
           "snippets",
           "buffer",
-          "csharp_namespace",
+          "csharp_namespace"
         },
         providers = {
           csharp_namespace = {
