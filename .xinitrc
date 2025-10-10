@@ -11,4 +11,4 @@ sxhkd &
 #nvidia-settings --load-config-only &
 flameshot &
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-exec dwm > ~/dwm.log 2>&1
+exec dwm
