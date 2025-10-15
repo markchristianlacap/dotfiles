@@ -40,7 +40,7 @@ return {
       ensure_installed = {
         "csharpier",
         "cspell",
-        "roslyn-unstable",
+        "roslyn",
       },
     })
   end,

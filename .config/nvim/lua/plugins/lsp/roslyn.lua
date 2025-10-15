@@ -1,7 +1,8 @@
 return {
   "seblyng/roslyn.nvim",
-  ft = "cs",
   ---@module 'roslyn.config'
   ---@type RoslynNvimConfig
-  opts = {},
+  opts = {
+    -- your configuration comes here; leave empty for default settings
+  },
 }
