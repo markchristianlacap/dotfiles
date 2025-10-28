@@ -11,31 +11,68 @@ You're welcome to explore or reuse parts of it, but note that some settings are 
 
 ---
 
-### ⚙️ Configurations
-- picom – compositor for transparency and shadows  
-- pipewire – modern audio server  
-- zsh – shell setup with aliases and plugins  
-- tmux – terminal multiplexer  
-- sxhkd – hotkey daemon  
-- fzf – fuzzy finder  
-- nvim – Neovim configuration  
-- zoxide – smarter `cd`  
-- yazi – terminal file manager  
-- eza – modern `ls` replacement  
+### 🧱 Suckless Components
+- [**dwm**](https://github.com/markchristianlacap/dwm) – dynamic window manager  
+- [**st**](https://github.com/markchristianlacap/st) – simple terminal  
+- [**dmenu**](https://github.com/markchristianlacap/dmenu) – dynamic menu  
+- [**dwmblocks-async**](https://github.com/markchristianlacap/dwmblocks-async) – modular status bar  
 
 ---
 
-### 🧱 Suckless Components
-- [**dwm**](https://github.com/markchristianlacap/dwm)  
-- [**st**](https://github.com/markchristianlacap/st)  
-- [**dmenu**](https://github.com/markchristianlacap/dmenu)  
-- [**dwmblocks-async**](https://github.com/markchristianlacap/dwmblocks-async)  
+### ⚙️ Core Configurations
+
+#### Window Manager & Display
+- **picom** – compositor for transparency and shadows  
+- **dunst** – lightweight notification daemon  
+- **sxhkd** – hotkey daemon for custom keybindings  
+- **feh** – wallpaper setter  
+- **slock** – simple X screen locker  
+- **flameshot** – powerful screenshot tool  
+
+#### Shell & Terminal
+- **zsh** – shell with custom prompt and aliases  
+  - **zsh-syntax-highlighting** – syntax highlighting plugin  
+  - **zsh-autosuggestions** – fish-like autosuggestions  
+  - **zsh-vi-mode** – vi mode for zsh  
+- **tmux** – terminal multiplexer  
+- **zoxide** – smarter `cd` command  
+
+#### File Management & Navigation
+- **yazi** – modern terminal file manager  
+- **fzf** – fuzzy finder for quick navigation  
+- **eza** – modern `ls` replacement with colors and icons  
+
+#### Editor & Development
+- **nvim** – Neovim with extensive LSP configuration  
+  - LSP, completion, formatting, and more  
+  - Custom keybindings and plugins via lazy.nvim  
+
+#### Audio & Media
+- **pipewire** – modern audio server  
+- **amixer** – ALSA mixer for volume control  
+- **pavucontrol** – PulseAudio volume control GUI  
+
+---
+
+### 🖥️ Applications
+- **Firefox** – web browser  
+- **VS Code** – code editor  
+- **Thunar** – file manager  
+- **Blueberry** – Bluetooth manager  
+
+---
+
+### 📜 System Files
+- **.xinitrc** – X session initialization  
+- **.Xresources** – X11 terminal colors and fonts (Kanagawa Dragon theme)  
+- **.zprofile** – auto-start X on login to tty1  
+- **.scripts/** – custom shell scripts (power menu, battery monitor, etc.)  
 
 ---
 
 ### ✨ Fonts
-- **Iosevka SS04**  
-- **Symbols Nerd Font**
+- **Iosevka SS04** – programming font  
+- **Symbols Nerd Font** – icon glyphs  
 
 ---
 
