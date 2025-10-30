@@ -1,6 +1,7 @@
 {
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
   "boilersharp.nvim": { "branch": "master", "commit": "4d984e34a2abde08e2391d861364e016033c51dc" },
+  "cs-to-ts": { "branch": "main", "commit": "6e1ecd5b5defef490a41f6e762e225f021ab7b00" },
   "csharp-namespace.nvim": { "branch": "main", "commit": "b2ba07c6d88d787db2587aaea56fd815c1bde91e" },
   "cspell.nvim": { "branch": "main", "commit": "07d75238648ef99c0c5c05f4cfd83093d0a01dd4" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
@@ -33,7 +34,7 @@
   "roslyn.nvim": { "branch": "main", "commit": "7ba2dd0a5628c5ad3d8cc5a22e66ece3efc371bc" },
   "smart-splits.nvim": { "branch": "master", "commit": "6c7c64b6e1be6eb95fd9583c0969e0df625c6cd6" },
   "smear-cursor.nvim": { "branch": "main", "commit": "abfa5835920b1d76c0e24e1465a618ad914be90a" },
-  "snacks.nvim": { "branch": "main", "commit": "ba529d4f5d409639e082aff916c9b8e71b480531" },
+  "snacks.nvim": { "branch": "main", "commit": "46917d0629595281e7d2de3834af8fd95584befd" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "windsurf.vim": { "branch": "main", "commit": "a8d47ec54fe82df920b2545559f767003e8a7f8d" }
 }
