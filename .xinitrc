@@ -6,9 +6,10 @@ xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --output DP-0 --primary --mode
 dunst &
 ~/.fehbg &
 picom -b &
-dwmblocks &
+#dwmblocks &
 sxhkd &
 #nvidia-settings --load-config-only &
 flameshot &
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-exec dwm
+#exec dwm
+exec oxwm
