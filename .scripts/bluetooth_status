@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Get MAC of the device that is currently connected (first match)
+device_mac=$(bluetoothctl info | grep "Device" | head -n 1 | awk '{print $2}')
+
+if [ -z "$device_mac" ]; then
+    echo " No BT"
+    exit 0
+fi
+
+# Check if the device is actually connected
+connected=$(bluetoothctl info "$device_mac" | grep "Connected: yes")
+if [ -z "$connected" ]; then
+    echo " No BT"
+    exit 0
+fi
+
+# Get the device name
+device_name=$(bluetoothctl info "$device_mac" | grep "Alias:" | sed 's/.*Alias: //')
+
+# Output
+echo " $device_name"
+
