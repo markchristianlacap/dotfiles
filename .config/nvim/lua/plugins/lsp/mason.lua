@@ -21,10 +21,9 @@ return {
         "vue-language-server",
         "lua-language-server",
         "css-lsp",
+        "docker-language-server",
         "html-lsp",
-        "json-lsp",
         "yaml-language-server",
-        "dockerfile-language-server",
         "intelephense",
         "vtsls",
 

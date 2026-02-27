@@ -27,8 +27,7 @@ vim.lsp.enable {
   "emmet_language_server",
   "cssls",
   "html",
-  "jsonls",
   "yamlls",
-  "dockerls",
+  "docker_language_server",
   "intelephense",
 }
