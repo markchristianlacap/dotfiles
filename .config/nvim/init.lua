@@ -4,3 +4,4 @@ require "config.autocmds"
 require "config.diagnostics"
 require "config.lazy"
 require "config.lsp"
+
