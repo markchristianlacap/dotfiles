@@ -45,4 +45,12 @@ return {
 
     client.handlers["tsserver/request"] = typescriptHandler
   end,
+  settings = {
+    vue = {
+      suggest = {
+        componentNameCasing = "preferKebabCase",
+        propNameCasing = "preferKebabCase",
+      },
+    },
+  },
 }
