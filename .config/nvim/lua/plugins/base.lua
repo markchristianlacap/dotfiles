@@ -5,8 +5,8 @@ return {
 
     priority = 1000,
     config = function()
-      require("kanagawa").setup({ transparent = true })
-      vim.cmd.colorscheme("kanagawa-dragon")
+      require("kanagawa").setup { transparent = true }
+      vim.cmd.colorscheme "kanagawa-dragon"
     end,
   },
   {

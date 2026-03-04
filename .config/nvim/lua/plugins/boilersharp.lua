@@ -1,5 +1,4 @@
 return {
   "DestopLine/boilersharp.nvim",
-  opts = {
-  },
+  opts = {},
 }

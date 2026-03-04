@@ -13,9 +13,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "Code actions")
     map("n", "<leader>lr", vim.lsp.buf.rename, "Rename symbol")
     map("n", "<leader>ld", vim.diagnostic.open_float, "Show diagnostics")
-    map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev diagnostic")
-    map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")
+    map("n", "[d", function() vim.diagnostic.jump { count = -1, float = true } end, "Prev diagnostic")
+    map("n", "]d", function() vim.diagnostic.jump { count = 1, float = true } end, "Next diagnostic")
     map("n", "K", vim.lsp.buf.hover, "Hover docs")
     map("n", "<leader>lR", "<cmd>LspRestart<CR>", "Restart LSP")
   end,
 })
+
+vim.lsp.enable {
+  "eslint",
+  "vtsls",
+  "vue_ls",
+  "lua_ls",
+  "emmet_language_server",
+  "cssls",
+  "html",
+  "yamlls",
+  "docker_language_server",
+  "intelephense",
+}

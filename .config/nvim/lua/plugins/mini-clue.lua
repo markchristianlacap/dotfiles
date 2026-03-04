@@ -1,39 +1,39 @@
 return {
-  'nvim-mini/mini.clue',
-  version = '*',
+  "nvim-mini/mini.clue",
+  version = "*",
   config = function()
-    local miniclue = require('mini.clue')
-    miniclue.setup({
+    local miniclue = require "mini.clue"
+    miniclue.setup {
       triggers = {
         -- Leader triggers
-        { mode = 'n', keys = '<Leader>' },
-        { mode = 'x', keys = '<Leader>' },
+        { mode = "n", keys = "<Leader>" },
+        { mode = "x", keys = "<Leader>" },
 
         -- Built-in completion
-        { mode = 'i', keys = '<C-x>' },
+        { mode = "i", keys = "<C-x>" },
 
         -- `g` key
-        { mode = 'n', keys = 'g' },
-        { mode = 'x', keys = 'g' },
+        { mode = "n", keys = "g" },
+        { mode = "x", keys = "g" },
 
         -- Marks
-        { mode = 'n', keys = "'" },
-        { mode = 'n', keys = '`' },
-        { mode = 'x', keys = "'" },
-        { mode = 'x', keys = '`' },
+        { mode = "n", keys = "'" },
+        { mode = "n", keys = "`" },
+        { mode = "x", keys = "'" },
+        { mode = "x", keys = "`" },
 
         -- Registers
-        { mode = 'n', keys = '"' },
-        { mode = 'x', keys = '"' },
-        { mode = 'i', keys = '<C-r>' },
-        { mode = 'c', keys = '<C-r>' },
+        { mode = "n", keys = '"' },
+        { mode = "x", keys = '"' },
+        { mode = "i", keys = "<C-r>" },
+        { mode = "c", keys = "<C-r>" },
 
         -- Window commands
-        { mode = 'n', keys = '<C-w>' },
+        { mode = "n", keys = "<C-w>" },
 
         -- `z` key
-        { mode = 'n', keys = 'z' },
-        { mode = 'x', keys = 'z' },
+        { mode = "n", keys = "z" },
+        { mode = "x", keys = "z" },
       },
 
       clues = {
@@ -46,8 +46,8 @@ return {
         miniclue.gen_clues.z(),
       },
       windos = {
-        delay = 300
+        delay = 300,
       },
-    })
-  end
+    }
+  end,
 }
