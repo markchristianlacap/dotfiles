@@ -84,13 +84,12 @@ compinit
 # Plugins
 ########################################
 # Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # VI mode
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /opt/homebrew/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 # Disable default ^R binding to work with fzf
 function zvm_after_init() {
@@ -106,3 +105,8 @@ source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/markchristianlacap/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
