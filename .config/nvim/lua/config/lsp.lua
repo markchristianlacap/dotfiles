@@ -31,4 +31,5 @@ vim.lsp.enable {
   "yamlls",
   "docker_language_server",
   "intelephense",
+  "unocss"
 }

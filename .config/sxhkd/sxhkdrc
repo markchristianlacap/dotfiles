@@ -1,20 +1,20 @@
 # make sxhkd reload its configuration files:
-super + Escape
+alt + Escape
 	pkill -USR1 -x sxhkd
 
 # open browser
-super + shift + p
+alt + shift + p
 	firefox
 
 # open vscode
-super + v
+alt + v
 	code
 
 # power menu
-super + shift + s
+alt + shift + s
 	sh $HOME/.scripts/powermenu.sh
 # vbox 
-super + shift + v
+alt + shift + v
 	sh $HOME/.scripts/vbox.sh
 
 # screenshot
@@ -22,11 +22,11 @@ Print
 	flameshot gui
 
 # open mixer
-super + n
+alt + n
 	pavucontrol
 
 # open file manager
-super + e
+alt + e
 	thunar
 
 # lock screen
@@ -46,5 +46,5 @@ XF86AudioMute
 	amixer -q sset Master toggle
 
 # open bluetooth manager  
-super + shift + b
+alt + shift + b
   st bluetui	
