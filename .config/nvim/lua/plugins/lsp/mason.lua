@@ -26,6 +26,7 @@ return {
         "yaml-language-server",
         "intelephense",
         "vtsls",
+        "unocss-language-server",
 
         -- tools
         "csharpier",
