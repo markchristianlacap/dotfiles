@@ -1,9 +1,10 @@
 ########################################
 # Environment
 ########################################
-export PATH="$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export TERM="xterm-256color"
+
 ########################################
 # History
 ########################################
@@ -11,16 +12,16 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE="$HOME/.cache/zsh/history"
 
-setopt inc_append_history      # Append history, don’t overwrite
-setopt share_history           # Share history across sessions
-setopt hist_ignore_dups        # Don’t record duplicates
-setopt hist_reduce_blanks      # Trim unnecessary spaces
+setopt inc_append_history      # Append history
+setopt share_history           # Share across sessions
+setopt hist_ignore_dups        # Ignore duplicates
+setopt hist_reduce_blanks      # Trim spaces
 
 ########################################
 # Options
 ########################################
-setopt autocd                  # Just type dir to cd
-setopt prompt_subst            # Allow prompt functions
+setopt autocd
+setopt prompt_subst
 
 ########################################
 # Prompt
@@ -49,9 +50,11 @@ y() {
   tmp=$(mktemp -t "yazi-cwd.XXXXXX") || return
   trap 'rm -f "$tmp"' EXIT
   yazi "$@" --cwd-file="$tmp"
+
   if IFS= read -r -d '' cwd <"$tmp" && [[ -n $cwd && $cwd != $PWD ]]; then
     builtin cd -- "$cwd"
   fi
+
   trap - EXIT
 }
 
@@ -74,66 +77,53 @@ alias sc="sudo systemctl"
 ########################################
 # Completion
 ########################################
-zstyle ':completion:*' menu select
 zmodload zsh/complist
 autoload -Uz compinit
 compinit
 
+zstyle ':completion:*' menu select
+
 ########################################
 # Plugins
 ########################################
-# Homebrew (macOS)
+# Detect plugin base path
 if command -v brew >/dev/null 2>&1; then
-    BREW_PREFIX=$(brew --prefix)
-    base="$BREW_PREFIX/share"
+  base="$(brew --prefix)/share"
 else
-    # Default for Arch / most Linux
-    base="/usr/share/zsh/plugins"
+  base="/usr/share/zsh/plugins"
 fi
 
-# Load plugins if they exist
-[ -f "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && \
-    source "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
+# Load plugins (order matters: highlighting last)
 [ -f "$base/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
-    source "$base/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  source "$base/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 [ -f "$base/zsh-vi-mode/zsh-vi-mode.plugin.zsh" ] && \
-    source "$base/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+  source "$base/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+
+[ -f "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && \
+  source "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# zsh-vi-mode config
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-# Disable default ^R binding to work with fzf
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
   bindkey "^g" autosuggest-accept
 }
 
-# Set up fzf key bindings and fuzzy completion
+########################################
+# Tools
+########################################
+# fzf
 source <(fzf --zsh)
 
-
-# Zoxide (smart cd)
+# zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/markchristianlacap/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-export PATH="/home/mark/.local/bin:$PATH"
-
-# Add required zsh plugins if not already present
-if [[ ! " ${plugins[@]} " =~ " zsh-autosuggestions " ]]; then
-    plugins+=(zsh-autosuggestions)
+########################################
+# Docker (optional, macOS-specific)
+########################################
+if [ -d "$HOME/.docker/completions" ]; then
+  fpath=("$HOME/.docker/completions" $fpath)
 fi
-if [[ ! " ${plugins[@]} " =~ " zsh-syntax-highlighting " ]]; then
-    plugins+=(zsh-syntax-highlighting)
-fi
-# Enable cursor styling (default is true, but safe to set)
-ZVM_CURSOR_STYLE_ENABLED=true
-
-# Normal mode → solid block
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-
-# Insert mode → blinking beam (THIS is what you want)
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
