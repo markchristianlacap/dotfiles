@@ -83,13 +83,24 @@ compinit
 ########################################
 # Plugins
 ########################################
-# Syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# VI mode
-source /opt/homebrew/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# Homebrew (macOS)
+if command -v brew >/dev/null 2>&1; then
+    BREW_PREFIX=$(brew --prefix)
+    base="$BREW_PREFIX/share"
+else
+    # Default for Arch / most Linux
+    base="/usr/share/zsh/plugins"
+fi
 
+# Load plugins if they exist
+[ -f "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && \
+    source "$base/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+[ -f "$base/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
+    source "$base/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+[ -f "$base/zsh-vi-mode/zsh-vi-mode.plugin.zsh" ] && \
+    source "$base/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 # Disable default ^R binding to work with fzf
 function zvm_after_init() {
@@ -110,7 +121,6 @@ fpath=(/Users/markchristianlacap/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-=======
 export PATH="/home/mark/.local/bin:$PATH"
 
 # Add required zsh plugins if not already present
