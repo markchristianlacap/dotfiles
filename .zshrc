@@ -4,7 +4,6 @@
 export PATH="$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH"
 export EDITOR="nvim"
 export TERM="xterm-256color"
-
 ########################################
 # History
 ########################################
@@ -130,3 +129,11 @@ fi
 if [[ ! " ${plugins[@]} " =~ " zsh-syntax-highlighting " ]]; then
     plugins+=(zsh-syntax-highlighting)
 fi
+# Enable cursor styling (default is true, but safe to set)
+ZVM_CURSOR_STYLE_ENABLED=true
+
+# Normal mode → solid block
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+
+# Insert mode → blinking beam (THIS is what you want)
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
