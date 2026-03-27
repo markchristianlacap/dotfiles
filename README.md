@@ -15,7 +15,6 @@ Color palette: [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)
 **Files:** `.xinitrc` · `.Xresources` · `.zprofile`
 **Configs:** `.config/` (dunst, kitty, nvim, picom, pipewire, sxhkd, tmux)
 **Scripts:** battery · bluetooth · powermenu · tmux-session  
-
 **Required:** Iosevka SS04 · Nerd Fonts Symbols
 ---
 
@@ -26,7 +25,6 @@ Color palette: [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)
 **Shell:** zsh · tmux · zoxide  
 **File Manager:** yazi · fzf · eza
 **Configs:** `.config/` (kitty, nvim, tmux)
-
 **Required:** Hammerspoon · Iosevka SS04 · Nerd Fonts Symbols
 
 ---
@@ -35,3 +33,9 @@ Color palette: [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)
 
 **Editor:** Neovim (LSP, lazy.nvim, cspell, stylua)  
 
+## Installation
+
+```bash
+git clone https://github.com/markchristianlacap/dotfiles.git
+stow .
+```
