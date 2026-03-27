@@ -19,6 +19,7 @@ Tiling window manager for macOS. dwm-inspired master-stack layout with vim keybi
 | `Hyper + t` | Launch terminal (Kitty) |
 | `Hyper + e` | Launch Finder |
 | `Hyper + p` | Launch Firefox |
+| `Hyper + r` | Reload configuration |
 
 ---
 
@@ -67,4 +68,4 @@ local apps = {
 local masterRatio = 0.6  -- 60/40 split
 ```
 
-Reload: `hs.reload()` or menu bar → Reload Config
+Reload with `Hyper + r` or menu bar → Reload Config

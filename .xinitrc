@@ -11,5 +11,5 @@ sxhkd &
 #nvidia-settings --load-config-only &
 flameshot &
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-#exec dwm
-exec oxwm
+exec dwm
+#exec oxwm

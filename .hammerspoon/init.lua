@@ -147,3 +147,9 @@ end)
 hs.hotkey.bind(hyper, "p", function()
   hs.execute("export MOZ_DISABLE_SAFE_MODE_KEY=1 && open -a Firefox")
 end)
+
+-- reload config
+hs.hotkey.bind(hyper, "r", function()
+  hs.reload()
+end)
+hs.alert.show("Config loaded")
