@@ -1,0 +1,8 @@
+theme = "Kanagawa Dragon"
+font-family = "Iosevka SS04"
+background-opacity = 0.95
+background-blur = macos-glass-clear
+macos-titlebar-style = hidden
+window-decoration = none
+window-padding-x = 10
+window-padding-y = 10

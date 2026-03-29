@@ -47,4 +47,4 @@ XF86AudioMute
 
 # open bluetooth manager  
 super + shift + b
-  kitty bluetui	
+  ghostty -e bluetui	

@@ -35,7 +35,7 @@ git_branch_prompt() {
 }
 
 PROMPT='%F{green}%n%f %F{blue}%~%f %F{red}$(git_branch_prompt)%f
-%F{yellow}➜%f '
+%F{yellow}➜%f  '
 
 ########################################
 # Functions
