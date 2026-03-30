@@ -28,18 +28,14 @@ setopt prompt_subst
 ########################################
 autoload -U colors && colors
 
-git_branch() {
-  git symbolic-ref --quiet --short HEAD 2>/dev/null || :
-}
-
 git_branch_prompt() {
   local branch
-  branch=$(git_branch)
-  [[ -n $branch ]] && print " %F{red}$branch"
+  branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null)
+  [[ -n $branch ]] && print "$branch"
 }
 
-PROMPT='%F{green}%n@%m %F{blue}%~$(git_branch_prompt)
-%F{yellow}-> %{$reset_color%}'
+PROMPT='%F{green}%n%f %F{blue}%~%f %F{red}$(git_branch_prompt)%f
+%F{yellow}➜%f  '
 
 ########################################
 # Functions
