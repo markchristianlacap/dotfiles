@@ -6,7 +6,7 @@ local altShift = { "alt", "shift" }
 
 -- apps
 local apps = {
-  terminal = "kitty",
+  terminal = "ghostty",
   browser  = "Firefox",
   explorer = "Finder",
 }
