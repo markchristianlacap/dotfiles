@@ -13,13 +13,29 @@ return {
       preset = "enter",
       ["<C-k>"] = { "select_prev", "fallback" },
       ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-e>"] = { "hide", "fallback" },
     },
 
     appearance = {
       nerd_font_variant = "mono",
+      kind_icon_width = 1,
     },
 
-    completion = { documentation = { auto_show = false } },
+    completion = {
+      documentation = {
+        auto_show = false,
+        window = {
+          border = "rounded",
+        },
+      },
+      menu = {
+        border = "rounded",
+      },
+      ghost_text = {
+        enabled = true,
+      },
+    },
 
     sources = {
       default = {
@@ -37,7 +53,17 @@ return {
         },
       },
     },
-    fuzzy = { implementation = "prefer_rust_with_warning" },
+
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      prebuilt_binaries = {
+        download = true,
+      },
+    },
+
+    signature = {
+      enabled = true,
+    },
   },
   opts_extend = { "sources.default" },
 }

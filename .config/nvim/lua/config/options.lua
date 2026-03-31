@@ -15,7 +15,8 @@ opt.showmode = false
 
 -- Files
 opt.swapfile = false
-opt.undofile = true
+opt.backup = false
+opt.writebackup = false
 opt.backspace = "indent,eol,start"
 
 -- Scrolling
@@ -35,3 +36,18 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
 opt.hlsearch = true
+
+-- Completion
+opt.completeopt = "menuone,noselect"
+opt.pumheight = 10
+
+-- Performance
+opt.updatetime = 200
+opt.timeoutlen = 300
+
+-- Line breaking
+opt.breakindent = true
+opt.showbreak = "  "
+
+-- Conceal
+opt.conceallevel = 2
