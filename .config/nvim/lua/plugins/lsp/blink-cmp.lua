@@ -19,9 +19,7 @@ return {
 
     appearance = {
       nerd_font_variant = "mono",
-      kind_icon_width = 1,
     },
-
     completion = {
       documentation = {
         auto_show = false,
@@ -60,7 +58,6 @@ return {
         download = true,
       },
     },
-
     signature = {
       enabled = true,
     },
