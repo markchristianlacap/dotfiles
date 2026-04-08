@@ -13,11 +13,33 @@ local apps = {
 
 -- layout ratio
 local masterRatio = 0.6
+local windowFilter = hs.window.filter.new()
+
+local function findWindowIndex(wins, target)
+  if not target then return nil end
+
+  local targetId = target:id()
+  for i, win in ipairs(wins) do
+    if win:id() == targetId then
+      return i
+    end
+  end
+
+  return nil
+end
+
+local function cycleIndex(idx, count, direction)
+  if direction == "next" then
+    return (idx % count) + 1
+  end
+
+  return ((idx - 2 + count) % count) + 1
+end
 
 -- get visible windows on main screen, sorted left to right
 local function getSortedWindows()
   local screen = hs.screen.mainScreen()
-  local wins = hs.window.filter.new():getWindows()
+  local wins = windowFilter:getWindows()
 
   local filtered = hs.fnutils.filter(wins, function(win)
     return win:screen() == screen and win:isStandard()
@@ -38,14 +60,12 @@ local function snap(direction)
 
   local f = win:screen():frame()
 
-  local layout = {
-    left  = { x = f.x, y = f.y, w = f.w / 2, h = f.h },
-    right = { x = f.x + f.w / 2, y = f.y, w = f.w / 2, h = f.h },
-    full  = { x = f.x, y = f.y, w = f.w, h = f.h },
-  }
-
-  if layout[direction] then
-    win:setFrame(layout[direction])
+  if direction == "left" then
+    win:setFrame({ x = f.x, y = f.y, w = f.w / 2, h = f.h })
+  elseif direction == "right" then
+    win:setFrame({ x = f.x + f.w / 2, y = f.y, w = f.w / 2, h = f.h })
+  elseif direction == "full" then
+    win:setFrame({ x = f.x, y = f.y, w = f.w, h = f.h })
   end
 end
 
@@ -70,11 +90,14 @@ local function tile()
     local sh = math.floor(f.h / (#wins - 1))
 
     for i = 2, #wins do
+      local y = f.y + (i - 2) * sh
+      local h = (i == #wins) and (f.h - (sh * (#wins - 2))) or sh
+
       wins[i]:setFrame({
         x = f.x + mw,
-        y = f.y + (i - 2) * sh,
+        y = y,
         w = f.w - mw,
-        h = sh
+        h = h
       })
     end
   end
@@ -86,27 +109,61 @@ local function moveFocus(direction)
   local active = hs.window.focusedWindow()
   if not active or #wins < 2 then return end
 
-  local idx = 1
-  for i, w in ipairs(wins) do
-    if w:id() == active:id() then
-      idx = i
-      break
-    end
-  end
+  local idx = findWindowIndex(wins, active)
+  if not idx then return end
 
-  local nextIdx
-  if direction == "next" then
-    nextIdx = (idx % #wins) + 1
-  else
-    nextIdx = ((idx - 2 + #wins) % #wins) + 1
-  end
-
+  local nextIdx = cycleIndex(idx, #wins, direction)
   wins[nextIdx]:focus()
+end
+
+local function swapWith(direction)
+  local wins = getSortedWindows()
+  local active = hs.window.focusedWindow()
+  if not active or #wins < 2 then return end
+
+  local idx = findWindowIndex(wins, active)
+  if not idx then return end
+
+  local targetIdx = cycleIndex(idx, #wins, direction)
+
+  local currentWin = wins[idx]
+  local targetWin = wins[targetIdx]
+
+  local currentFrame = currentWin:frame()
+  local targetFrame = targetWin:frame()
+  currentWin:setFrame(targetFrame)
+  targetWin:setFrame(currentFrame)
+  currentWin:focus()
+end
+
+local function promoteToMaster()
+  local wins = getSortedWindows()
+  local active = hs.window.focusedWindow()
+  if not active or #wins < 2 then
+    tile()
+    return
+  end
+
+  local activeIdx = findWindowIndex(wins, active)
+
+  if not activeIdx then return end
+
+  local activeFrame = wins[activeIdx]:frame()
+  local masterFrame = wins[1]:frame()
+  wins[activeIdx]:setFrame(masterFrame)
+  wins[1]:setFrame(activeFrame)
+  wins[activeIdx]:focus()
+  tile()
+  active:focus()
 end
 
 -- focus navigation
 hs.hotkey.bind(hyper, "j", function() moveFocus("next") end)
 hs.hotkey.bind(hyper, "k", function() moveFocus("prev") end)
+
+-- dwm-style stack move
+hs.hotkey.bind(altShift, "j", function() swapWith("next") end)
+hs.hotkey.bind(altShift, "k", function() swapWith("prev") end)
 
 -- adjust master size
 hs.hotkey.bind(hyper, "h", function()
@@ -121,7 +178,8 @@ end)
 
 -- layout controls
 hs.hotkey.bind(hyper, "m", function() snap("full") end)
-hs.hotkey.bind(hyper, "return", tile)
+hs.hotkey.bind(hyper, "return", promoteToMaster)
+hs.hotkey.bind(altShift, "return", tile)
 
 hs.hotkey.bind(hyper, "space", function()
   local w = hs.window.focusedWindow()
@@ -151,5 +209,10 @@ end)
 -- reload config
 hs.hotkey.bind(hyper, "r", function()
   hs.reload()
+end)
+
+hs.hotkey.bind(hyper, "c", function()
+  local w = hs.window.focusedWindow()
+  if w then w:close() end
 end)
 hs.alert.show("Config loaded")
