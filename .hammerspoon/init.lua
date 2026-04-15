@@ -7,7 +7,6 @@ local altShift = { "alt", "shift" }
 -- apps
 local apps = {
   terminal = "kitty",
-  browser  = "Brave Browser",
   explorer = "Finder",
 }
 
@@ -203,7 +202,7 @@ hs.hotkey.bind(hyper, "e", function()
 end)
 
 hs.hotkey.bind(hyper, "p", function()
-  hs.application.launchOrFocus(apps.browser)
+  hs.execute("export MOZ_DISABLE_SAFE_MODE_KEY=1 && open -a Firefox")
 end)
 
 -- reload config
