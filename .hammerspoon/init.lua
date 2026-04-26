@@ -187,11 +187,6 @@ hs.hotkey.bind(hyper, "space", function()
     tile()
   end
 end)
-
--- manual snap
-hs.hotkey.bind(altShift, "h", function() snap("left") end)
-hs.hotkey.bind(altShift, "l", function() snap("right") end)
-
 -- app launchers
 hs.hotkey.bind(hyper, "t", function()
   hs.application.launchOrFocus(apps.terminal)
