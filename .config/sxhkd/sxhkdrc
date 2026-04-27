@@ -4,7 +4,7 @@ super + Escape
 
 # open browser
 super + shift + p
- brave	
+  firefox	
 
 # open vscode
 super + v
