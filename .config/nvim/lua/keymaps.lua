@@ -1,8 +1,7 @@
--- Leader keys
+-- Utility for simpler mappings
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Utility for simpler mappings
 local map = function(mode, lhs, rhs, desc)
   vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
 end
@@ -64,5 +63,14 @@ map("n", "<leader>q", "<cmd>quit<CR>", "Quit")
 map("n", "<leader>wq", "<cmd>writequit<CR>", "Save and quit")
 map("n", "<leader>q!", "<cmd>quit!<CR>", "Quit without saving")
 
--- Format
-map("n", "<leader>f", function() require("utils.format").format_buffer() end, "Format buffer")
+map("n", "<leader>e", "<cmd>Oil<CR>", "Open oil")
+
+-- fzf-lua
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>", "Find files")
+map("n", "<leader>fg", "<cmd>FzfLua grep<CR>", "Grep")
+map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", "Find buffers")
+map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", "Help tags")
+map("n", "<leader>fc", "<cmd>FzfLua commands<CR>", "Commands")
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", "Open recent files")
+map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", "Keymaps")
+map("n", "<leader>fw", "<cmd>FzfLua live_grep_native<CR>", "Live grep")

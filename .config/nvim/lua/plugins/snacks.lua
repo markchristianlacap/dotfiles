@@ -23,7 +23,7 @@ return {
     },
     {
       "<leader>gG",
-      function() Snacks.lazygit({ cwd = vim.uv.cwd() }) end,
+      function() Snacks.lazygit { cwd = vim.uv.cwd() } end,
       desc = "LazyGit (cwd)",
     },
   },

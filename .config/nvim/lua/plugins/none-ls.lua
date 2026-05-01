@@ -15,7 +15,7 @@ return {
         },
         cspell.code_actions,
         null_ls.builtins.formatting.csharpier,
-        null_ls.builtins.formatting.prettier
+        null_ls.builtins.formatting.prettier,
       },
     }
   end,

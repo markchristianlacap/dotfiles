@@ -6,7 +6,7 @@ local format_by_ft = {
   html = { "null-ls", "eslint" },
   javascript = { "null-ls", "eslint" },
   typescript = { "null-ls", "eslint" },
-  cs = { "roslyn_ls", "null-ls" },
+  cs = { "null-ls" },
 }
 
 function M.on_save()
