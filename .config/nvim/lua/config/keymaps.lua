@@ -67,10 +67,33 @@ map("n", "<leader>e", "<cmd>Oil<CR>", "Open oil")
 
 -- fzf-lua
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", "Find files")
-map("n", "<leader>fg", "<cmd>FzfLua grep<CR>", "Grep")
 map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", "Find buffers")
-map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", "Help tags")
 map("n", "<leader>fc", "<cmd>FzfLua commands<CR>", "Commands")
+map("n", "<leader>fh", "<cmd>FzfLua command_history<CR>", "Command history")
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", "Open recent files")
 map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", "Keymaps")
 map("n", "<leader>fw", "<cmd>FzfLua live_grep_native<CR>", "Live grep")
+map("n", "<leader>fr", "<cmd>FzfLua resume<CR>", "Resume last search")
+map("n", "<leader>gf", "<cmd>FzfLua git_files<CR>", "Git files")
+map("n", "<leader>gs", "<cmd>FzfLua git_status<CR>", "Git status")
+map("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", "Git commits")
+
+-- LSP
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    local opts = { buffer = event.buf, silent = true }
+    map = function(mode, lhs, rhs, desc) vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc })) end
+    map({ "n", "v" }, "gd", vim.lsp.buf.definition, "Go to definition")
+    map({ "n", "v" }, "gD", vim.lsp.buf.declaration, "Go to declaration")
+    map({ "n", "v" }, "gR", "<cmd>FzfLua lsp_references<CR>", "Show references")
+    map({ "n", "v" }, "]d", function() vim.diagnostic.jump { count = 1, float = true } end, "Next diagnostic")
+    map({ "n", "v" }, "[d", function() vim.diagnostic.jump { count = -1, float = true } end, "Prev diagnostic")
+    map({ "n", "v" }, "K", vim.lsp.buf.hover, "Hover docs")
+    map({ "n", "v" }, "<leader>la", "<cmd>FzfLua lsp_code_actions<CR>", "Code actions")
+    map({ "n", "v" }, "<leader>fd", "<cmd>FzfLua diagnostics_document<CR>", "Document diagnostics")
+    map({ "n", "v" }, "<leader>fD", "<cmd>FzfLua diagnostics_workspace<CR>", "Workspace diagnostics")
+    map({ "n", "v" }, "<leader>lr", vim.lsp.buf.rename, "Rename symbol")
+    map({ "n", "v" }, "<leader>ld", vim.diagnostic.open_float, "Show diagnostics")
+    map({ "n", "v" }, "<leader>lR", "<cmd>lsp restart<CR>", "Restart LSP")
+  end,
+})

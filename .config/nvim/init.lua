@@ -15,17 +15,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- Load options and keymaps
-require "options"
-require "keymaps"
-require "autocmds"
+require "config.options"
+require "config.keymaps"
+require "config.autocmds"
 
 -- Setup lazy.nvim
 require("lazy").setup {
   spec = {
     -- import your plugins
-    { import = "plugins" },
+    { import = "plugins.lsp" },
+    { import = "plugins.ui" },
+    { import = "plugins.editor" },
   },
   -- automatically check for plugin updates
   checker = { enabled = true },

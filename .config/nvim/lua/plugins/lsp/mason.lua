@@ -22,7 +22,6 @@ return {
         "intelephense",
         "vtsls",
         "unocss-language-server",
-
         -- tools
         "csharpier",
         "cspell",
