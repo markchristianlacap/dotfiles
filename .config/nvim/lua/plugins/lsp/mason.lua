@@ -31,7 +31,6 @@ return {
         -- tools
         "csharpier",
         "cspell",
-        "roslyn",
       },
     }
   end,
