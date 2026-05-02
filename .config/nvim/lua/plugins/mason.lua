@@ -6,7 +6,12 @@ return {
   config = function()
     local mason = require("mason")
     local mason_tool_installer = require("mason-tool-installer")
-    mason.setup({})
+    mason.setup({
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      },
+    })
 
     mason_tool_installer.setup({
       ensure_installed = {
@@ -28,6 +33,7 @@ return {
         -- tools
         "csharpier",
         "cspell",
+        "roslyn"
       },
     })
   end,
