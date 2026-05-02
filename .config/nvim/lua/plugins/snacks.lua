@@ -18,12 +18,16 @@ return {
   keys = {
     {
       "<leader>gg",
-      function() Snacks.lazygit() end,
+      function()
+        Snacks.lazygit()
+      end,
       desc = "LazyGit (root dir)",
     },
     {
       "<leader>gG",
-      function() Snacks.lazygit { cwd = vim.uv.cwd() } end,
+      function()
+        Snacks.lazygit({ cwd = vim.uv.cwd() })
+      end,
       desc = "LazyGit (cwd)",
     },
   },

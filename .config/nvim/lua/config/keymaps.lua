@@ -82,12 +82,18 @@ map("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", "Git commits")
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
     local opts = { buffer = event.buf, silent = true }
-    map = function(mode, lhs, rhs, desc) vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc })) end
+    map = function(mode, lhs, rhs, desc)
+      vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
+    end
     map({ "n", "v" }, "gd", vim.lsp.buf.definition, "Go to definition")
     map({ "n", "v" }, "gD", vim.lsp.buf.declaration, "Go to declaration")
     map({ "n", "v" }, "gR", "<cmd>FzfLua lsp_references<CR>", "Show references")
-    map({ "n", "v" }, "]d", function() vim.diagnostic.jump { count = 1, float = true } end, "Next diagnostic")
-    map({ "n", "v" }, "[d", function() vim.diagnostic.jump { count = -1, float = true } end, "Prev diagnostic")
+    map({ "n", "v" }, "]d", function()
+      vim.diagnostic.jump({ count = 1, float = true })
+    end, "Next diagnostic")
+    map({ "n", "v" }, "[d", function()
+      vim.diagnostic.jump({ count = -1, float = true })
+    end, "Prev diagnostic")
     map({ "n", "v" }, "K", vim.lsp.buf.hover, "Hover docs")
     map({ "n", "v" }, "<leader>la", "<cmd>FzfLua lsp_code_actions<CR>", "Code actions")
     map({ "n", "v" }, "<leader>fd", "<cmd>FzfLua diagnostics_document<CR>", "Document diagnostics")

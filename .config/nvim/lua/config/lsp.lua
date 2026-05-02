@@ -1,4 +1,4 @@
-local vue_path = vim.fn.expand "$MASON/packages" .. "/vue-language-server" .. "/node_modules/@vue/language-server"
+local vue_path = vim.fn.expand("$MASON/packages") .. "/vue-language-server" .. "/node_modules/@vue/language-server"
 local file_types = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 local vue_plugin = {
   name = "@vue/typescript-plugin",
@@ -19,7 +19,7 @@ local vtsls_config = {
   filetypes = file_types,
 }
 vim.lsp.config("vtsls", vtsls_config)
-vim.lsp.enable {
+vim.lsp.enable({
   "eslint",
   "vtsls",
   "vue_ls",
@@ -32,4 +32,4 @@ vim.lsp.enable {
   "intelephense",
   "unocss",
   "roslyn_ls",
-}
+})
