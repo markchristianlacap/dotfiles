@@ -22,6 +22,9 @@ return {
         "intelephense",
         "vtsls",
         "unocss-language-server",
+        "json-lsp",
+        "bash-language-server",
+        "docker-compose-language-service",
         -- tools
         "csharpier",
         "cspell",

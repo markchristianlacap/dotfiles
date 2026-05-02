@@ -17,6 +17,7 @@ opt.showmode = false
 opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
+opt.undofile = true
 opt.backspace = "indent,eol,start"
 
 -- Scrolling

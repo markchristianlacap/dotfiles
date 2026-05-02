@@ -10,6 +10,7 @@ end
 map("i", "jk", "<ESC>", "Escape insert mode")
 map("n", "<leader><leader>", "<cmd>nohlsearch<CR>", "Clear search highlight")
 map("n", "<ESC>", "<cmd>nohlsearch<CR>", "Clear search highlight")
+map("n", "<leader>u", "<cmd>UndotreeToggle<CR>", "Toggle undo tree")
 
 -- Better indenting
 map("v", "<", "<gv", "Indent less with visual stay")

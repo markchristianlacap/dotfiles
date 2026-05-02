@@ -32,4 +32,7 @@ vim.lsp.enable({
   "intelephense",
   "unocss",
   "roslyn_ls",
+  "docker-compose-language-service",
+  "bashls",
+  "jsonls"
 })
