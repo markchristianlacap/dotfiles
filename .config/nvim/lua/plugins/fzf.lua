@@ -15,7 +15,7 @@ return {
   },
   config = function(_, opts)
     require("fzf-lua").setup(opts)
-    require('fzf-lua').register_ui_select()
+    require("fzf-lua").register_ui_select()
   end,
   ---@diagnostic enable: missing-fields
 }

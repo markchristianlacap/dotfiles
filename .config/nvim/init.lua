@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out,                            "WarningMsg" },
+      { out, "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -18,16 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Load options and keymaps
 require "config.options"
 require "config.keymaps"
-require "config.autocmds"
 
 -- Setup lazy.nvim
-require("lazy").setup {
-  spec = {
-    -- import your plugins
-    { import = "plugins.lsp" },
-    { import = "plugins.ui" },
-    { import = "plugins.editor" },
-  },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-}
+require("lazy").setup "plugins"
+-- Load configs
+require "config.lsp"
+require "config.autocmds"
