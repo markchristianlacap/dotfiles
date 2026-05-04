@@ -72,6 +72,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map = function(mode, lhs, rhs, desc)
       vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
     end
+    map({ "n", "v" }, "<leader>lf", function()
+      require("utils.format").format()
+    end, "Format file")
     map({ "n", "v" }, "gd", vim.lsp.buf.definition, "Go to definition")
     map({ "n", "v" }, "gD", vim.lsp.buf.declaration, "Go to declaration")
     map({ "n", "v" }, "gR", "<cmd>FzfLua lsp_references<CR>", "Show references")

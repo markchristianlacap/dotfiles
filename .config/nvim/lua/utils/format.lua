@@ -1,24 +1,30 @@
 local M = {}
 
 local format_by_ft = {
-  vue = { "null-ls", "eslint" },
-  json = { "null-ls", "eslint" },
-  html = { "null-ls", "eslint" },
-  javascript = { "null-ls", "eslint" },
-  typescript = { "null-ls", "eslint" },
-  cs = { "null-ls" },
+  vue = { "none-ls", "eslint" },
+  json = { "none-ls" },
+  html = { "none-ls" },
+  javascript = { "none-ls", "eslint" },
+  typescript = { "none-ls", "eslint" },
+  cs = { "none-ls" },
 }
 
-function M.on_save()
+function M.format()
   local ft = vim.bo.filetype
-  local formatters = format_by_ft[ft]
-  if formatters and #formatters > 0 then
-    for _, name in ipairs(formatters) do
-      pcall(vim.lsp.buf.format, { name = name })
-    end
-  else
-    pcall(vim.lsp.buf.format)
-  end
+  local allowed = format_by_ft[ft]
+
+  vim.lsp.buf.format({
+    async = false,
+    filter = function(client)
+      -- if no specific config, allow all
+      if not allowed then
+        return true
+      end
+
+      -- match allowed clients
+      return vim.tbl_contains(allowed, client.name)
+    end,
+  })
 end
 
 return M

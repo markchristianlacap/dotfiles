@@ -3,10 +3,9 @@ local format = require("utils.format")
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("AutoFormatOnSave", { clear = true }),
   callback = function()
-    format.on_save()
+    format.format()
   end,
 })
-
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
   callback = function()
