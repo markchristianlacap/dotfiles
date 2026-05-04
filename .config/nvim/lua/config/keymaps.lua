@@ -65,20 +65,6 @@ map("n", "<leader>wq", "<cmd>writequit<CR>", "Save and quit")
 map("n", "<leader>q!", "<cmd>quit!<CR>", "Quit without saving")
 
 map("n", "<leader>e", "<cmd>Oil<CR>", "Open oil")
-
--- fzf-lua
-map("n", "<leader>ff", "<cmd>FzfLua files<CR>", "Find files")
-map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", "Find buffers")
-map("n", "<leader>fc", "<cmd>FzfLua commands<CR>", "Commands")
-map("n", "<leader>fh", "<cmd>FzfLua command_history<CR>", "Command history")
-map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", "Open recent files")
-map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", "Keymaps")
-map("n", "<leader>fw", "<cmd>FzfLua live_grep_native<CR>", "Live grep")
-map("n", "<leader>fr", "<cmd>FzfLua resume<CR>", "Resume last search")
-map("n", "<leader>gf", "<cmd>FzfLua git_files<CR>", "Git files")
-map("n", "<leader>gs", "<cmd>FzfLua git_status<CR>", "Git status")
-map("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", "Git commits")
-
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
