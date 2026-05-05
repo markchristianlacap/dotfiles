@@ -16,7 +16,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         -- LSP servers
-        "eslint-lsp",
+        "eslint_d",
         "emmet-language-server",
         "vue-language-server",
         "lua-language-server",

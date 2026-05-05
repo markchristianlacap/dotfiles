@@ -16,8 +16,10 @@ return {
           end,
         }),
         cspell.code_actions,
-        null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.csharpier,
+        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.formatting.eslint_d"),
       },
     })
   end,

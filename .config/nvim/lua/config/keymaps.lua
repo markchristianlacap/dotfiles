@@ -72,9 +72,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map = function(mode, lhs, rhs, desc)
       vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
     end
-    map({ "n", "v" }, "<leader>lf", function()
-      require("utils.format").format()
-    end, "Format file")
+    map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "Code actions")
     map({ "n", "v" }, "]d", function()
       vim.diagnostic.jump({ count = 1, float = true })
     end, "Next diagnostic")

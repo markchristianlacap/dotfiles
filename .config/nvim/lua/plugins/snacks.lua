@@ -1,11 +1,18 @@
-    return {
+return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
     scroll = {},
     scope = {},
     input = {},
+    indent = {},
     rename = {},
+    words = {},
+    image = {},
+    notifier = {
+      top_down = false,
+      style = "minimal"
+    },
     picker = {
       enabled = true,
       layout = "ivy_split",
@@ -28,6 +35,7 @@
     { "<leader>fk", function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
     { "<leader>fq", function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
     { "<leader>fr", function() Snacks.picker.resume() end,                                  desc = "Resume" },
+    { "<leader>fh", function() Snacks.picker.command_history() end,                         desc = "Resume" },
     { "gd",         function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
     { "gD",         function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
     { "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                     desc = "References" },
