@@ -25,5 +25,6 @@
   "snacks.nvim": { "branch": "main", "commit": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e" },
   "tree-sitter-manager.nvim": { "branch": "main", "commit": "69c48bff61d763280e472a3fe989338f949583e3" },
   "undotree": { "branch": "master", "commit": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d" },
+  "vim-fugitive": { "branch": "master", "commit": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0" },
   "windsurf.vim": { "branch": "main", "commit": "3c0a4f8a7be75113a6e19be13b7cc37210d6e26a" }
 }
