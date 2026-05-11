@@ -36,12 +36,12 @@ local function cycleIndex(idx, count, direction)
 end
 
 -- get visible windows on main screen, sorted left to right
-local function getSortedWindows()
-  local screen = hs.screen.mainScreen()
+local function getSortedWindows(screen)
+  local activeScreen = screen or hs.screen.mainScreen()
   local wins = windowFilter:getWindows()
 
   local filtered = hs.fnutils.filter(wins, function(win)
-    return win:screen() == screen and win:isStandard()
+    return win:screen() == activeScreen and win:isStandard()
   end)
 
   table.sort(filtered, function(a, b)
@@ -50,6 +50,17 @@ local function getSortedWindows()
   end)
 
   return filtered
+end
+
+local function focusMonitor(direction)
+  local active = hs.window.focusedWindow()
+  local baseScreen = active and active:screen() or hs.screen.mainScreen()
+  local target = (direction == "next") and baseScreen:next() or baseScreen:previous()
+
+  local wins = getSortedWindows(target)
+  if #wins > 0 then
+    wins[1]:focus()
+  end
 end
 
 -- snap focused window
@@ -159,6 +170,8 @@ end
 -- focus navigation
 hs.hotkey.bind(hyper, "j", function() moveFocus("next") end)
 hs.hotkey.bind(hyper, "k", function() moveFocus("prev") end)
+hs.hotkey.bind(hyper, ".", function() focusMonitor("next") end)
+hs.hotkey.bind(hyper, ",", function() focusMonitor("prev") end)
 
 -- dwm-style stack move
 hs.hotkey.bind(altShift, "j", function() swapWith("next") end)
