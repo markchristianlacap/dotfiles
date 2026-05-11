@@ -11,6 +11,7 @@ Tiling window manager for macOS. dwm-inspired master-stack layout with vim keybi
 | Key | Action |
 |-----|--------|
 | `Hyper + j/k` | Focus next/prev window |
+| `Hyper + ,/.` | Focus prev/next monitor |
 | `⌥⇧ + j/k` | Swap focused window with next/prev |
 | `Hyper + h/l` | Shrink/grow master width |
 | `Hyper + Return` | Promote focused window to master and retile |
