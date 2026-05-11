@@ -26,7 +26,7 @@ local vue_ls_config = {
         propNameCasing = "preferKebabCase",
       },
     },
-  }
+  },
 }
 
 vim.lsp.config("vtsls", vtsls_config)
@@ -44,5 +44,5 @@ vim.lsp.enable({
   "unocss",
   "docker-compose-language-service",
   "bashls",
-  "jsonls"
+  "jsonls",
 })

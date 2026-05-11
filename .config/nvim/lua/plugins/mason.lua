@@ -33,7 +33,7 @@ return {
         -- tools
         "csharpier",
         "cspell",
-        "roslyn"
+        "roslyn",
       },
     })
   end,
