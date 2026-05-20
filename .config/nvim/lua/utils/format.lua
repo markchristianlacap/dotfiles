@@ -17,7 +17,7 @@ function M.format()
       pcall(vim.lsp.buf.format, { name = name })
     end
   else
-    pcall(vim.lsp.buf.format )
+    pcall(vim.lsp.buf.format)
   end
 end
 
