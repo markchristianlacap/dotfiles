@@ -1,0 +1,44 @@
+{
+  "plugins": {
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "mason.nvim": {
+      "rev": "cbf8d285e1462dd24acf3507817be2bbcb035919",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "6791615e48801cbf5b2baefadcea77a7760de3f4",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "neocodeium": {
+      "rev": "a1f73887af6cc4b09cb15cc96e0b72d7932552a5",
+      "src": "https://github.com/monkoose/neocodeium"
+    },
+    "nvim-lspconfig": {
+      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "roslyn.nvim": {
+      "rev": "426984d6c1e8ee88a394a562eb925e687340f91e",
+      "src": "https://github.com/seblyng/roslyn.nvim"
+    },
+    "smart-splits.nvim": {
+      "rev": "3151100591670148cb0065388117622212208ee3",
+      "src": "https://github.com/mrjones2014/smart-splits.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "08385a36da42f947baae8d517a32e4252f243fe7",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-moonfly-colors": {
+      "rev": "fe0179e650fac51c9a9190e2fafea69952aba1b6",
+      "src": "https://github.com/bluz71/vim-moonfly-colors"
+    }
+  }
+}
