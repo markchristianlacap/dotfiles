@@ -3,7 +3,6 @@ vim.pack.add({
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
   "https://github.com/markchristianlacap/csharp-namespace.nvim",
   "https://github.com/mason-org/mason.nvim",
-  "https://github.com/monkoose/neocodeium",
   "https://github.com/mrjones2014/smart-splits.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-mini/mini.nvim",
@@ -15,4 +14,13 @@ vim.pack.add({
   "https://github.com/saghen/blink.lib",
   "https://github.com/saghen/blink.cmp",
   "https://github.com/folke/snacks.nvim",
+  "https://github.com/Exafunction/windsurf.vim"
 })
+require("plugins.mini")
+require("plugins.snacks")
+require("plugins.treesitter")
+require("plugins.windsurf")
+require("plugins.smart-splits")
+require("plugins.fugitive")
+require("plugins.blink")
+require("plugins.lsp")
