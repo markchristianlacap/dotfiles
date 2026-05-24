@@ -63,10 +63,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics", buffer = ev.buf })
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous line diagnostic", buffer = ev.buf })
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next line diagnostic", buffer = ev.buf })
-    vim.keymap.set('i', '<C-g>', function()
-          if not vim.lsp.inline_completion.get() then
-            return '<C-g>'
-          end
-        end, { expr = true, desc = 'Accept the current inline completion' })
+    vim.keymap.set("i", "<C-g>", function()
+      if not vim.lsp.inline_completion.get() then
+        return "<C-g>"
+      end
+    end, { expr = true, desc = "Accept the current inline completion" })
   end,
 })

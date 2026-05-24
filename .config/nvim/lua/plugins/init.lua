@@ -14,12 +14,10 @@ vim.pack.add({
   "https://github.com/saghen/blink.lib",
   "https://github.com/saghen/blink.cmp",
   "https://github.com/folke/snacks.nvim",
-  -- "https://github.com/Exafunction/windsurf.vim",
 })
 require("plugins.mini")
 require("plugins.snacks")
 require("plugins.treesitter")
--- require("plugins.windsurf")
 require("plugins.smart-splits")
 require("plugins.fugitive")
 require("plugins.blink")
