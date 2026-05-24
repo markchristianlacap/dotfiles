@@ -12,4 +12,6 @@ vim.pack.add({
   "https://github.com/romus204/tree-sitter-manager.nvim",
   "https://github.com/seblyng/roslyn.nvim",
   "https://github.com/tpope/vim-fugitive",
+  "https://github.com/saghen/blink.lib",
+  "https://github.com/saghen/blink.cmp",
 })

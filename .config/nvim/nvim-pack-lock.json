@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "35e3923a09ff3db150ceff80004befcbbfa071a0",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "src": "https://github.com/saghen/blink.lib"
+    },
     "csharp-namespace.nvim": {
       "rev": "193e898024b1e5ade8c387fecdbeedf7afc08115",
       "src": "https://github.com/markchristianlacap/csharp-namespace.nvim"
