@@ -52,6 +52,10 @@
       "rev": "b24335c3186b6c35522fa108af63646a2f70b3b6",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
+    "snacks.nvim": {
+      "rev": "0770753c88228f7f15449c6a5b242e3f7cd0d71c",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
     "tree-sitter-manager.nvim": {
       "rev": "7d0e588297acd2b906c77a9da9ecf716d5de7746",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
