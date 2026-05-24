@@ -22,6 +22,7 @@ require("mason-tool-installer").setup({
     "marksman",
     "unocss-language-server",
     "copilot-language-server",
+    "css-lsp",
   },
 })
 
@@ -47,6 +48,7 @@ vim.lsp.enable({
   "marksman",
   "unocss",
   "copilot",
+  "cssls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
