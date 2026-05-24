@@ -1,5 +1,4 @@
 require("plugins.mini.animate")
-require("plugins.mini.cmdline")
 require("plugins.mini.clue")
 require("plugins.mini.comment")
 require("plugins.mini.diff")

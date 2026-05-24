@@ -11,11 +11,22 @@ require("mason-tool-installer").setup({
     "roslyn",
     "vue-language-server",
     "vtsls",
+    "typos-lsp",
+    "harper-ls",
+    "bash-language-server",
+    "docker-language-server",
+    "eslint-lsp",
+    "html-lsp",
+    "intelephense",
+    "json-lsp",
+    "marksman",
+    "unocss-language-server",
+    "copilot-language-server",
   },
 })
 
 vim.diagnostic.config({ virtual_text = true })
-
+vim.lsp.inline_completion.enable()
 require("plugins.lsp.lua")
 require("plugins.lsp.typescript")
 require("plugins.lsp.csharp")
@@ -25,6 +36,17 @@ vim.lsp.enable({
   "roslyn",
   "vtsls",
   "vue_ls",
+  "typos_lsp",
+  "harper_ls",
+  "bashls",
+  "docker_language_server",
+  "eslint",
+  "html",
+  "intelephense",
+  "jsonls",
+  "marksman",
+  "unocss",
+  "copilot",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -41,5 +63,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics", buffer = ev.buf })
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous line diagnostic", buffer = ev.buf })
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next line diagnostic", buffer = ev.buf })
+    vim.keymap.set('i', '<C-g>', function()
+          if not vim.lsp.inline_completion.get() then
+            return '<C-g>'
+          end
+        end, { expr = true, desc = 'Accept the current inline completion' })
   end,
 })

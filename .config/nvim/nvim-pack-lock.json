@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "35e3923a09ff3db150ceff80004befcbbfa071a0",
+      "rev": "82efc953a6121822fda1974241a4d1af74c6c026",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -59,10 +59,6 @@
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
       "src": "https://github.com/tpope/vim-fugitive"
-    },
-    "windsurf.vim": {
-      "rev": "3c0a4f8a7be75113a6e19be13b7cc37210d6e26a",
-      "src": "https://github.com/Exafunction/windsurf.vim"
     }
   }
 }
