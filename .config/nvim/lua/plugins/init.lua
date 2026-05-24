@@ -1,0 +1,15 @@
+vim.pack.add({
+  "https://github.com/JoosepAlviste/nvim-ts-context-commentstring",
+  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+  "https://github.com/markchristianlacap/csharp-namespace.nvim",
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/monkoose/neocodeium",
+  "https://github.com/mrjones2014/smart-splits.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/nvim-mini/mini.nvim",
+  "https://github.com/rafamadriz/friendly-snippets",
+  "https://github.com/rebelot/kanagawa.nvim",
+  "https://github.com/romus204/tree-sitter-manager.nvim",
+  "https://github.com/seblyng/roslyn.nvim",
+  "https://github.com/tpope/vim-fugitive",
+})
