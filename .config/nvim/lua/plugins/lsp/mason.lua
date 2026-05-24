@@ -23,5 +23,8 @@ require("mason-tool-installer").setup({
     "unocss-language-server",
     "copilot-language-server",
     "css-lsp",
+    "stylua",
+    "prettierd",
+    "csharpier",
   },
 })

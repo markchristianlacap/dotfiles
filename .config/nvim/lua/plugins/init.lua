@@ -14,6 +14,7 @@ vim.pack.add({
   "https://github.com/saghen/blink.lib",
   "https://github.com/saghen/blink.cmp",
   "https://github.com/folke/snacks.nvim",
+  "https://github.com/stevearc/conform.nvim"
 })
 require("plugins.mini")
 require("plugins.snacks")

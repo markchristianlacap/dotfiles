@@ -1,6 +1,7 @@
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.inline_completion.enable()
 require("plugins.lsp.mason")
+require("plugins.lsp.conform")
 require("plugins.lsp.lua")
 require("plugins.lsp.typescript")
 require("plugins.lsp.csharp")
