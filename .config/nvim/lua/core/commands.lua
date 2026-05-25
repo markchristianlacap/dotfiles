@@ -1,5 +1,5 @@
 vim.api.nvim_create_user_command("PackUpdate", function(opts)
-  -- checks if any argument is passed
+  -- Checks if any argument is passed
   if opts.args:match("%S") then
     -- update specific plugins
     local plugins = vim.split(opts.args, "%s+", { trimempty = true })

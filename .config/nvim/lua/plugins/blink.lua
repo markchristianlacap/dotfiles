@@ -24,7 +24,7 @@ cmp.setup({
               end
 
               local is_unknown_type =
-                  vim.tbl_contains({ "link", "socket", "fifo", "char", "block", "unknown" }, ctx.item.data.type)
+                vim.tbl_contains({ "link", "socket", "fifo", "char", "block", "unknown" }, ctx.item.data.type)
               local mini_icon, _ = require("mini.icons").get(
                 is_unknown_type and "os" or ctx.item.data.type,
                 is_unknown_type and "" or ctx.label
@@ -39,7 +39,7 @@ cmp.setup({
               end
 
               local is_unknown_type =
-                  vim.tbl_contains({ "link", "socket", "fifo", "char", "block", "unknown" }, ctx.item.data.type)
+                vim.tbl_contains({ "link", "socket", "fifo", "char", "block", "unknown" }, ctx.item.data.type)
               local mini_icon, mini_hl = require("mini.icons").get(
                 is_unknown_type and "os" or ctx.item.data.type,
                 is_unknown_type and "" or ctx.label

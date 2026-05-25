@@ -1,8 +1,5 @@
 require("mason").setup({
-  registries = {
-    "github:mason-org/mason-registry",
-    "github:Crashdummyy/mason-registry",
-  },
+  registries = { "github:mason-org/mason-registry", "github:Crashdummyy/mason-registry" },
 })
 
 require("mason-tool-installer").setup({
@@ -11,8 +8,6 @@ require("mason-tool-installer").setup({
     "roslyn",
     "vue-language-server",
     "vtsls",
-    "typos-lsp",
-    "harper-ls",
     "bash-language-server",
     "docker-language-server",
     "eslint-lsp",
@@ -26,5 +21,6 @@ require("mason-tool-installer").setup({
     "stylua",
     "prettierd",
     "csharpier",
+    "cspell-lsp",
   },
 })
