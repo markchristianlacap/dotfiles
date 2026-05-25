@@ -12,7 +12,9 @@ require("conform").setup({
     json = { "prettierd" },
     yaml = { "prettierd" },
     markdown = { "prettierd" },
-    vue = { "prettierd" },
+    vue = {},
+    ["*"] = {},
   },
+  timeout_ms = 5000,
   format_on_save = {},
 })
