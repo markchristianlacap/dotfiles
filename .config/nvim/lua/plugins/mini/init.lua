@@ -1,12 +1,9 @@
-require("mini.animate").setup()
 require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
 require("mini.surround").setup()
 
-require("plugins.mini.clue")
 require("plugins.mini.comment")
 require("plugins.mini.diff")
 require("plugins.mini.files")
 require("plugins.mini.notify")
-require("plugins.mini.pick")
