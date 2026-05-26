@@ -50,11 +50,11 @@ vim.keymap.set("n", "<leader>fp", function()
   picker.projects()
 end, { desc = "Projects" })
 
-vim.keymap.set("n", "<leader>fr", function()
+vim.keymap.set("n", "<leader>fo", function()
   picker.recent()
 end, { desc = "Recent Files" })
 
-vim.keymap.set("n", "<leader>fR", function()
+vim.keymap.set("n", "<leader>fr", function()
   picker.resume()
 end, { desc = "Resume Picker" })
 
@@ -73,8 +73,8 @@ vim.keymap.set("n", "<leader>fi", picker.icons, { desc = "Icons" })
 vim.keymap.set("n", "<leader>fk", picker.keymaps, { desc = "Keymaps" })
 vim.keymap.set("n", "<leader>fm", picker.man, { desc = "Man Pages" })
 
-vim.keymap.set("n", "<leader>sd", picker.diagnostics, { desc = "Diagnostics" })
-vim.keymap.set("n", "<leader>sD", picker.diagnostics_buffer, { desc = "Buffer Diagnostics" })
+vim.keymap.set("n", "<leader>fd", picker.diagnostics, { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>fD", picker.diagnostics_buffer, { desc = "Buffer Diagnostics" })
 
 vim.keymap.set("n", "gd", picker.lsp_definitions, { desc = "Goto Definition" })
 vim.keymap.set("n", "gD", picker.lsp_declarations, { desc = "Goto Declaration" })
