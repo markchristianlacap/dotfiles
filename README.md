@@ -1,41 +1,34 @@
-# 🏠 .dotfiles  
+# dotfiles
 
-Personal dotfiles for **Arch Linux** and **macOS**.  
-Color palette: [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)
+Personal dotfiles for Arch Linux (dwm) and macOS (Hammerspoon).
 
----
+## Arch Linux
 
-## 🐧 Arch Linux
+- wm: dwm, st, dmenu, dwmblocks-async
+- display: picom, dunst, sxhkd, feh, flameshot
+- audio: pipewire, amixer, pavucontrol
+- shell: zsh, tmux, zoxide
+- files: yazi, fzf, eza
+- configs: dunst, kitty, nvim, picom, pipewire, sxhkd, tmux
+- scripts: battery, bluetooth, powermenu, tmux-session
+- fonts: Iosevka SS04, Nerd Fonts Symbols
 
-**Window Manager:** [dwm](https://github.com/markchristianlacap/dwm) · [st](https://github.com/markchristianlacap/st) · [dmenu](https://github.com/markchristianlacap/dmenu) · [dwmblocks-async](https://github.com/markchristianlacap/dwmblocks-async)  
-**Display:** picom · dunst · sxhkd · feh · flameshot  
-**Audio:** pipewire · amixer · pavucontrol  
-**Shell:** zsh · tmux · zoxide  
-**File Manager:** yazi · fzf · eza  
-**Files:** `.xinitrc` · `.Xresources` · `.zprofile`
-**Configs:** `.config/` (dunst, kitty, nvim, picom, pipewire, sxhkd, tmux)
-**Scripts:** battery · bluetooth · powermenu · tmux-session  
-**Required:** Iosevka SS04 · Nerd Fonts Symbols
----
+## macOS
 
-## 🍎 macOS
+- wm: Hammerspoon (dwm-like tiling)
+- terminal: kitty
+- shell: zsh, tmux, zoxide
+- configs: kitty, nvim, tmux
+- fonts: Iosevka SS04, Nerd Fonts Symbols
 
-**Window Manager:** [Hammerspoon](.hammerspoon/README.md) (tiling via Lua)  
-**Terminal:** kitty  
-**Shell:** zsh · tmux · zoxide  
-**File Manager:** yazi · fzf · eza
-**Configs:** `.config/` (kitty, nvim, tmux)
-**Required:** Hammerspoon · Iosevka SS04 · Nerd Fonts Symbols
+## Shared
 
----
+- editor: Neovim (LSP, blink.cmp, snacks.nvim)
+- theme: Kanagawa Dragon
 
-## 🛠️ Shared
+## Install
 
-**Editor:** Neovim (LSP, lazy.nvim, cspell, stylua)  
-
-## Installation
-
-```bash
+```
 git clone https://github.com/markchristianlacap/dotfiles.git
 stow .
 ```
