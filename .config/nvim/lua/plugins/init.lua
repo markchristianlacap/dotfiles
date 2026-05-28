@@ -17,6 +17,8 @@ vim.pack.add({
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/onsails/lspkind.nvim",
   "https://github.com/stevearc/oil.nvim",
+  "https://github.com/vieitesss/miniharp.nvim",
+  "https://github.com/folke/flash.nvim",
 })
 require("plugins.mini")
 require("plugins.snacks")
@@ -26,3 +28,5 @@ require("plugins.fugitive")
 require("plugins.blink")
 require("plugins.lsp")
 require("plugins.oil")
+require("plugins.miniharp")
+require("plugins.flash")

@@ -9,7 +9,8 @@ Snacks.setup({
   scroll = {},
   scope = {},
   picker = {
-    layout = "ivy_split",
+    layout = "ivy",
+    hidden = { "preview" },
   },
   notifier = {
     top_down = false,
