@@ -16,16 +16,15 @@ Snacks.setup({
     style = "minimal",
   },
 })
-
 vim.api.nvim_create_autocmd("User", {
-  pattern = "MiniFilesActionRename",
+  pattern = "OilActionsPost",
   callback = function(event)
-    Snacks.rename.on_rename_file(event.data.from, event.data.to)
+    if event.data.actions[1].type == "move" then
+      Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
+    end
   end,
 })
-
 local picker = Snacks.picker
-
 vim.keymap.set("n", "<leader><space>", function()
   picker.smart({ hidden = true })
 end, { desc = "Smart Find Files" })

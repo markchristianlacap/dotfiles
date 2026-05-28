@@ -19,8 +19,8 @@ require("mason-tool-installer").setup({
     "copilot-language-server",
     "css-lsp",
     "stylua",
-    "prettierd",
     "csharpier",
     "cspell-lsp",
+    "sqls",
   },
 })

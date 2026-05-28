@@ -16,6 +16,7 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/onsails/lspkind.nvim",
+  "https://github.com/stevearc/oil.nvim",
 })
 require("plugins.mini")
 require("plugins.snacks")
@@ -24,3 +25,4 @@ require("plugins.smart-splits")
 require("plugins.fugitive")
 require("plugins.blink")
 require("plugins.lsp")
+require("plugins.oil")

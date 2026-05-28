@@ -48,6 +48,10 @@
       "rev": "6141a40173c6efa98242dc951ed4b6f892c97027",
       "src": "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
     },
+    "oil.nvim": {
+      "rev": "b91ee5a77a6a9605d9c1aaf4fda74b66082c8297",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
     "roslyn.nvim": {
       "rev": "426984d6c1e8ee88a394a562eb925e687340f91e",
       "src": "https://github.com/seblyng/roslyn.nvim"

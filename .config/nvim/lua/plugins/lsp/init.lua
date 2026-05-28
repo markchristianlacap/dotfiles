@@ -21,6 +21,7 @@ vim.lsp.enable({
   "copilot",
   "cssls",
   "cspell_ls",
+  "sqls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -31,9 +32,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = ev.buf })
     vim.keymap.set({ "n", "v" }, "<leader>lR", "<cmd>lsp restart<cr>", { desc = "Restart LSP", buffer = ev.buf })
     vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", buffer = ev.buf })
-    vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics", buffer = ev.buf })
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous line diagnostic", buffer = ev.buf })
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next line diagnostic", buffer = ev.buf })
+    vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnostics", buffer = ev.buf })
+    vim.keymap.set("n", "]d", function()
+      vim.diagnostic.jump({ count = 1, float = true })
+    end, { desc = "Go to next diagnostic" })
+
+    vim.keymap.set("n", "[d", function()
+      vim.diagnostic.jump({ count = -1, float = true })
+    end, { desc = "Go to previous diagnostic" })
     vim.keymap.set("i", "<C-g>", function()
       if not vim.lsp.inline_completion.get() then
         return "<C-g>"
