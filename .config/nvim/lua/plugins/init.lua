@@ -17,8 +17,11 @@ vim.pack.add({
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/onsails/lspkind.nvim",
   "https://github.com/stevearc/oil.nvim",
-  "https://github.com/vieitesss/miniharp.nvim",
   "https://github.com/folke/flash.nvim",
+  {
+    src = "https://github.com/vieitesss/miniharp.nvim",
+    version = vim.version.range("v*"),
+  },
 })
 require("plugins.mini")
 require("plugins.snacks")

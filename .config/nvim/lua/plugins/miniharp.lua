@@ -1,4 +1,5 @@
 local miniharp = require("miniharp")
+miniharp.setup()
 
 vim.keymap.set("n", "<leader>a", miniharp.toggle_file, { desc = "miniharp: toggle file mark" })
 vim.keymap.set("n", "<C-n>", miniharp.next, { desc = "miniharp: next file mark" })
