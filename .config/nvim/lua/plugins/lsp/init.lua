@@ -5,6 +5,7 @@ require("plugins.lsp.conform")
 require("plugins.lsp.lua")
 require("plugins.lsp.typescript")
 require("plugins.lsp.csharp")
+require("plugins.lsp.dap")
 vim.lsp.enable({
   "lua_ls",
   "roslyn",

@@ -16,6 +16,10 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/onsails/lspkind.nvim",
+  "https://github.com/mfussenegger/nvim-dap",
+  "https://github.com/rcarriga/nvim-dap-ui",
+  "https://github.com/jayp0521/mason-nvim-dap.nvim",
+  "https://github.com/nvim-neotest/nvim-nio",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/folke/flash.nvim",
   {

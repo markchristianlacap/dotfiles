@@ -1,5 +1,8 @@
 require("mason").setup({
-  registries = { "github:mason-org/mason-registry", "github:Crashdummyy/mason-registry" },
+  registries = {
+    "github:mason-org/mason-registry",
+    "github:crashdummyy/mason-registry",
+  },
 })
 
 require("mason-tool-installer").setup({
@@ -22,5 +25,6 @@ require("mason-tool-installer").setup({
     "csharpier",
     "cspell-lsp",
     "sqls",
+    "netcoredbg",
   },
 })
