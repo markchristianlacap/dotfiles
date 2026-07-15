@@ -6,7 +6,6 @@ require("conform").setup({
     lua = { "stylua" },
     cs = { "csharpier", lsp_format = "first" },
     ["*"] = {},
-    sql = { "sql-formatter", lsp_format = "never" },
   },
   timeout_ms = 5000,
   format_on_save = {},

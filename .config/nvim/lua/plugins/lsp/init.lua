@@ -22,7 +22,6 @@ vim.lsp.enable({
   "copilot",
   "cssls",
   "cspell_ls",
-  "sqls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
