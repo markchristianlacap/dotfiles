@@ -24,6 +24,5 @@ require("mason-tool-installer").setup({
     "stylua",
     "csharpier",
     "cspell-lsp",
-    "netcoredbg",
   },
 })
