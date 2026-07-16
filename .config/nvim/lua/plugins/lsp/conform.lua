@@ -5,6 +5,10 @@ require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     cs = { "csharpier", lsp_format = "first" },
+    vue = function()
+      vim.cmd("LspEslintFixAll")
+      return { lsp_format = "never" }
+    end,
     ["*"] = {},
   },
   timeout_ms = 5000,
