@@ -1,5 +1,4 @@
 vim.diagnostic.config({ virtual_text = true })
-vim.lsp.inline_completion.enable()
 require("plugins.lsp.mason")
 require("plugins.lsp.conform")
 require("plugins.lsp.lua")
@@ -18,11 +17,9 @@ vim.lsp.enable({
   "jsonls",
   "marksman",
   "unocss",
-  "copilot",
   "cssls",
   "cspell_ls",
 })
-
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", buffer = ev.buf })
@@ -39,10 +36,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "[d", function()
       vim.diagnostic.jump({ count = -1, float = true })
     end, { desc = "Go to previous diagnostic" })
+
+    vim.g.codeium_disable_bindings = 1
     vim.keymap.set("i", "<C-g>", function()
-      if not vim.lsp.inline_completion.get() then
-        return "<C-g>"
-      end
-    end, { expr = true, desc = "Accept the current inline completion" })
+      return vim.fn["codeium#Accept"]()
+    end, { expr = true, silent = true })
+    vim.keymap.set("i", "<C-;>", function()
+      return vim.fn["codeium#CycleCompletions"](1)
+    end, { expr = true, silent = true })
+    vim.keymap.set("i", "<C-,>", function()
+      return vim.fn["codeium#CycleCompletions"](-1)
+    end, { expr = true, silent = true })
+    vim.keymap.set("i", "<C-x>", function()
+      return vim.fn["codeium#Clear"]()
+    end, { expr = true, silent = true })
   end,
 })

@@ -19,7 +19,6 @@ require("mason-tool-installer").setup({
     "json-lsp",
     "marksman",
     "unocss-language-server",
-    "copilot-language-server",
     "css-lsp",
     "stylua",
     "csharpier",
