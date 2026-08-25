@@ -46,7 +46,7 @@
       "src": "https://github.com/vieitesss/miniharp.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "31e3c02ac84f4766383930f46dfabfea4d315cf8",
+      "rev": "af9adce488c75ca0a81017945c2b7fa7b461bc23",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-ts-context-commentstring": {
