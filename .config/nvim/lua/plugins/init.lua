@@ -16,7 +16,6 @@ vim.pack.add({
   "https://github.com/onsails/lspkind.nvim",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/folke/flash.nvim",
-  "https://github.com/Exafunction/windsurf.vim",
   {
     src = "https://github.com/vieitesss/miniharp.nvim",
     version = vim.version.range("v*"),

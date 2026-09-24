@@ -18,7 +18,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "rev": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "kanagawa.nvim": {
@@ -38,7 +38,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "8d86a057fa14681cf7cab74ea7cba894a0abe14f",
+      "rev": "561751e839b99a4baca36b9d963166b66d2536a6",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "miniharp.nvim": {
@@ -46,7 +46,7 @@
       "src": "https://github.com/vieitesss/miniharp.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "af9adce488c75ca0a81017945c2b7fa7b461bc23",
+      "rev": "046b1a797af1effe8e0474b9af9657a3761ec58a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-ts-context-commentstring": {
@@ -58,11 +58,11 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "roslyn.nvim": {
-      "rev": "de9a98d61ed3fd01b5016eea5fe9e32f1a4c7cfb",
+      "rev": "bf1bd4e70bc7068d1b4aebf4ce03cc19a86615be",
       "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "5e92431aa7f5e618c2f6825f682df6d94f6e0a02",
+      "rev": "ec76708f1617ef9e2ac353357fe52d2c997a0f06",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "snacks.nvim": {
@@ -70,16 +70,12 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "tree-sitter-manager.nvim": {
-      "rev": "023590c8f068788a0513a4409bf37ff7f9d1deff",
+      "rev": "c59cb96f62db1c41830c2bb6c32fa72ffd701105",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
       "src": "https://github.com/tpope/vim-fugitive"
-    },
-    "windsurf.vim": {
-      "rev": "3c0a4f8a7be75113a6e19be13b7cc37210d6e26a",
-      "src": "https://github.com/Exafunction/windsurf.vim"
     }
   }
 }
