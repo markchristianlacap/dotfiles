@@ -1,15 +1,17 @@
 require("conform").setup({
-  default_format_opts = {
-    lsp_format = "last",
-  },
   formatters_by_ft = {
     lua = { "stylua" },
     cs = { "csharpier", lsp_format = "first" },
-    vue = function()
-      vim.cmd("LspEslintFixAll")
-      return { lsp_format = "never" }
+    ["*"] = function()
+      local client = vim.lsp.get_clients({ bufnr = 0 })
+      for _, c in pairs(client) do
+        if c.name == "eslint" then
+          vim.cmd("LspEslintFixAll")
+          return { lsp_format = "never" }
+        end
+      end
+      return { lsp_format = "fallback" }
     end,
-    ["*"] = {},
   },
   timeout_ms = 5000,
   format_on_save = {},
