@@ -123,3 +123,4 @@ eval "$(zoxide init --cmd cd zsh)"
 if [ -d "$HOME/.docker/completions" ]; then
   fpath=("$HOME/.docker/completions" $fpath)
 fi
+export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
