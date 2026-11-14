@@ -19,9 +19,29 @@ vim.lsp.enable({
   "unocss",
   "cssls",
   "cspell_ls",
+  "copilot",
 })
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
+    local bufnr = ev.buf
+    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlineCompletion, bufnr) then
+      vim.lsp.inline_completion.enable(true, { bufnr = bufnr })
+      vim.keymap.set(
+        "i",
+        "<C-g>",
+        vim.lsp.inline_completion.get,
+        { desc = "LSP: accept inline completion", buffer = bufnr }
+      )
+      vim.keymap.set(
+        "i",
+        "<C-f>",
+        vim.lsp.inline_completion.select,
+        { desc = "LSP: switch inline completion", buffer = bufnr }
+      )
+    end
+
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", buffer = ev.buf })
     vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Go to type definition", buffer = ev.buf })
     vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Show code actions", buffer = ev.buf })
@@ -36,19 +56,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "[d", function()
       vim.diagnostic.jump({ count = -1, float = true })
     end, { desc = "Go to previous diagnostic" })
-
-    vim.g.codeium_disable_bindings = 1
-    vim.keymap.set("i", "<C-g>", function()
-      return vim.fn["codeium#Accept"]()
-    end, { expr = true, silent = true })
-    vim.keymap.set("i", "<C-;>", function()
-      return vim.fn["codeium#CycleCompletions"](1)
-    end, { expr = true, silent = true })
-    vim.keymap.set("i", "<C-,>", function()
-      return vim.fn["codeium#CycleCompletions"](-1)
-    end, { expr = true, silent = true })
-    vim.keymap.set("i", "<C-x>", function()
-      return vim.fn["codeium#Clear"]()
-    end, { expr = true, silent = true })
   end,
 })

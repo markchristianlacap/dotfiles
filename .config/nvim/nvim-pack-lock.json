@@ -6,7 +6,7 @@
       "version": "'v1'"
     },
     "conform.nvim": {
-      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "csharp-namespace.nvim": {
@@ -14,11 +14,11 @@
       "src": "https://github.com/markchristianlacap/csharp-namespace.nvim"
     },
     "flash.nvim": {
-      "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
+      "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
       "src": "https://github.com/folke/flash.nvim"
     },
     "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "rev": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "kanagawa.nvim": {
@@ -38,15 +38,15 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "946ae64e0ee807ae3c41f382f0114b4ed4915b2c",
+      "rev": "561751e839b99a4baca36b9d963166b66d2536a6",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "miniharp.nvim": {
-      "rev": "a5a8ff1161a093fba2cbda80f627e8408ba7dd2b",
+      "rev": "c21b5bed7d7cc51c13fa00deb09197d330c8a062",
       "src": "https://github.com/vieitesss/miniharp.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "b7b920947f21339ee41fbb38c79d6445e12900aa",
+      "rev": "046b1a797af1effe8e0474b9af9657a3761ec58a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-ts-context-commentstring": {
@@ -58,11 +58,11 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "roslyn.nvim": {
-      "rev": "7d8c166a0c70473ffa558d4d2430769d581fa8dd",
+      "rev": "bf1bd4e70bc7068d1b4aebf4ce03cc19a86615be",
       "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "32f67888ac71942442fdab3819864a10449dfc41",
+      "rev": "ec76708f1617ef9e2ac353357fe52d2c997a0f06",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "snacks.nvim": {
@@ -70,7 +70,7 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "tree-sitter-manager.nvim": {
-      "rev": "9dc4ffc4fb010e7abb976a92360c2c5a7d324c15",
+      "rev": "c59cb96f62db1c41830c2bb6c32fa72ffd701105",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "vim-fugitive": {
